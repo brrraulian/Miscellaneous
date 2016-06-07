@@ -244,7 +244,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         @Override
         public void onPictureTaken(byte[] data, Camera camera) {
 
-            //bitmap = decodeSampledBitmapFromResource(data, 1500, 1500);
             bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
 
             if (data == null) {
@@ -274,7 +273,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
     public static Bitmap decodeSampledBitmapFromResource(byte[] data, int reqWidth, int reqHeight) {
 
-        // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeByteArray(data, 0, data.length, options);
@@ -395,12 +393,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
         id = db.insert("fila", "_id", ctv);
 
-        if (id > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
-
         db.close();
 
         return id;
@@ -415,25 +407,20 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
     }
 
     public static Intent createExplicitFromImplicitIntent(Context context, Intent implicitIntent) {
-        // Retrieve all services that can match the given intent
         PackageManager pm = context.getPackageManager();
         List<ResolveInfo> resolveInfo = pm.queryIntentServices(implicitIntent, 0);
 
-        // Make sure only one match was found
         if (resolveInfo == null || resolveInfo.size() != 1) {
             return null;
         }
 
-        // Get component info and create ComponentName
         ResolveInfo serviceInfo = resolveInfo.get(0);
         String packageName = serviceInfo.serviceInfo.packageName;
         String className = serviceInfo.serviceInfo.name;
         ComponentName component = new ComponentName(packageName, className);
 
-        // Create a new intent. Use the old one for extras and such reuse
         Intent explicitIntent = new Intent(implicitIntent);
 
-        // Set the component to be explicit
         explicitIntent.setComponent(component);
 
         return explicitIntent;
@@ -480,7 +467,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
     }
 
     public void Resolucao_Click(View v) {
-        // TODO Auto-generated method stub
         AlertDialog.Builder builder = new AlertDialog.Builder(CameraActivity.this);
         builder.setTitle("Resoluções:");
         ListView list = new ListView(CameraActivity.this);
@@ -491,21 +477,12 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,
                                     int position, long arg3) {
-                // TODO Auto-generated method stub
                 if (dialog.isShowing()) {
                     dialog.dismiss();
                 }
                 Toast.makeText(CameraActivity.this, "Clicked at Position" + position, Toast.LENGTH_SHORT).show();
             }
         });
-
-
-        /*
-        LayoutParams params = getWindow().getAttributes();
-        params.copyFrom(dialog.getWindow().getAttributes());
-        params.width = LayoutParams.WRAP_CONTENT;
-        dialog.getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-        */
 
         builder.setView(list);
         dialog = builder.create();

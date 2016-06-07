@@ -60,8 +60,6 @@ public class PostMultiplosService extends Service implements Runnable {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("LocalService", "Received start id " + startId + ": " + intent);
-        // We want this service to continue running until it is explicitly
-        // stopped, so return sticky.
         this.intent = intent;
 
         if (intent.getParcelableArrayListExtra("ENVIADOS") != null) {
@@ -98,7 +96,6 @@ public class PostMultiplosService extends Service implements Runnable {
 
         ArrayList<Uri> imagens = intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
 
-        // NOTIFICATION PROGRESS BAR
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mBuilder = new NotificationCompat.Builder(this);
         mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
@@ -107,11 +104,6 @@ public class PostMultiplosService extends Service implements Runnable {
         mBuilder.setAutoCancel(true);
         mBuilder.setProgress(0, 0, true);
         notificationManager.notify(id_notification, mBuilder.build());
-        /*
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nt = new Notification(R.drawable.arkslogo, "Arks - Status de Envio", System.currentTimeMillis());
-        nt.flags |= Notification.FLAG_AUTO_CANCEL;
-        */
 
         String status = "";
         boolean envios_ok = false;
@@ -122,8 +114,6 @@ public class PostMultiplosService extends Service implements Runnable {
         HttpURLConnection connection = null;
         DataOutputStream outputStream = null;
         DataInputStream inputStream = null;
-        //String urlServer = "http://192.168.56.1/Arks/post.php";
-        //String urlServer = "http://elcoa.hikem.com.br/AndroidHandler.ashx";
         HashMap<String, String> user = session.getUserDetails();
         String urlServer = "https://ws" + user.get(UserSessionManager.KEY_EMPRESA) + ".arks.com.br/Mobile/SendFile.ashx";
         String lineEnd = "\r\n";
@@ -151,14 +141,12 @@ public class PostMultiplosService extends Service implements Runnable {
                     URL url = new URL(urlServer);
                     connection = (HttpURLConnection) url.openConnection();
 
-                    // Allow Inputs &amp; Outputs.
                     connection.setDoInput(true);
                     connection.setDoOutput(true);
                     connection.setUseCaches(false);
 
                     connection.setChunkedStreamingMode(1024);
 
-                    // Set HTTP method to POST.
                     connection.setRequestMethod("POST");
 
                     connection.setRequestProperty("Connection", "Keep-Alive");
@@ -169,14 +157,14 @@ public class PostMultiplosService extends Service implements Runnable {
 
                     int index = pathToOurFile.lastIndexOf("/");
                     String fileName = pathToOurFile.substring(index + 1);
-                    outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + user.get(UserSessionManager.KEY_FOLDER) + "_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
+                    outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + user.get(UserSessionManager.KEY_FOLDER) + 
+					"_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
                     outputStream.writeBytes(lineEnd);
 
                     bytesAvailable = fileInputStream.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     buffer = new byte[bufferSize];
 
-                    // Read file
                     bytesRead = fileInputStream.read(buffer, 0, bufferSize);
 
                     while (bytesRead > 0) {
@@ -189,11 +177,6 @@ public class PostMultiplosService extends Service implements Runnable {
                     outputStream.writeBytes(lineEnd);
                     outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
-                    // Responses from the server (code and message)
-                    //serverResponseCode = connection.getResponseCode();
-                    //serverResponseMessage = connection.getResponseMessage();
-
-                    // Return from server
                     InputStreamReader ips = new InputStreamReader(connection.getInputStream());
                     BufferedReader line = new BufferedReader(ips);
 
@@ -214,12 +197,10 @@ public class PostMultiplosService extends Service implements Runnable {
 
                     if (linhaRetorno.equals("ok")) {
                         envios_ok = true;
-                        //Log.d("PostMultiplosService", "Enviado");
 
                         if (!enviados.contains(i)) {
                             enviados.add(i);
                             status = "Enviado";
-                            //InsereHistorico(getFileName(imagens.get(i)), status);
                             EditaHistorico((long)ids_historico.get(i), status);
 
                             mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
@@ -234,12 +215,10 @@ public class PostMultiplosService extends Service implements Runnable {
                             status = "Erro";
                             EditaHistorico((long)ids_historico.get(i), status);
                         } else {
-                            //Log.d("PostMultiplosService", "Erro");
                             envios_ok = false;
 
                             if (tentativas > 5) {
                                 status = "Erro";
-                                //InsereHistorico(getFileName(imagens.get(i)), status);
                                 EditaHistorico((long)ids_historico.get(i), status);
                             }
                         }
@@ -249,12 +228,10 @@ public class PostMultiplosService extends Service implements Runnable {
                     status = "Erro";
                     EditaHistorico((long)ids_historico.get(i), status);
                 } catch (NullPointerException nullEx) {
-                    //Log.d("PostMultiplosService", nullEx.getMessage());
                     envios_ok = false;
                     status = "Erro";
                     EditaHistorico((long)ids_historico.get(i), status);
                 } catch (Exception ex) {
-                    //Log.d("PostMultiplosService", ex.getMessage());
                     envios_ok = false;
                     status = "Erro";
                     EditaHistorico((long)ids_historico.get(i), status);
@@ -287,12 +264,6 @@ public class PostMultiplosService extends Service implements Runnable {
 
         if (envios_ok) {
             p = PendingIntent.getActivity(this, 0, new Intent(this.getApplicationContext(), HistoricoActivity.class), 0);
-            /*
-            nt.tickerText = "Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")";
-            nt.setLatestEventInfo(this, "Arks (" + enviados.size() + "/" + imagens.size() + ")", "Arquivos enviados com sucesso.", p);
-            nt.vibrate = new long[]{100, 2000, 1000, 2000};
-            notificationManager.notify((int) Math.round(Math.random()), nt);
-            */
             mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
             mBuilder.setContentTitle("Arks (" + enviados.size() + "/" + imagens.size() + ")");
             mBuilder.setContentText("Arquivos enviados com sucesso.");
@@ -303,13 +274,6 @@ public class PostMultiplosService extends Service implements Runnable {
         } else {
 
             if (!servidor_disponivel) {
-                /*
-                nt.tickerText = "Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")";
-                nt.setLatestEventInfo(this, "Arks (" + enviados.size() + "/" + imagens.size() + ")", "Erro: servidor indisponível.", p);
-                stopSelf();
-                nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                notificationManager.notify((int) Math.round(Math.random()), nt);
-                */
                 mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
                 mBuilder.setContentTitle("Arks (" + enviados.size() + "/" + imagens.size() + ")");
                 mBuilder.setContentText("Erro: servidor indisponível.");
@@ -317,13 +281,6 @@ public class PostMultiplosService extends Service implements Runnable {
                 mBuilder.setVibrate(new long[]{100, 2000, 1000, 2000});
                 notificationManager.notify(id_notification, mBuilder.build());
             } else if (mt_grandes.size() > 0) {
-                /*
-                nt.tickerText = "Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")";
-                nt.setLatestEventInfo(this, "Arks (" + enviados.size() + "/" + imagens.size() + ")", "Erro: arquivo maior que 10 MB.", p);
-                stopSelf();
-                nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                notificationManager.notify((int) Math.round(Math.random()), nt);
-                */
                 mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
                 mBuilder.setContentTitle("Arks (" + enviados.size() + "/" + imagens.size() + ")");
                 mBuilder.setContentText("Erro: arquivo maior que 10 MB.");
@@ -337,7 +294,6 @@ public class PostMultiplosService extends Service implements Runnable {
                     } catch (InterruptedException ex2) {
 
                     }
-                    //Log.d("PostMultiplosService", String.valueOf(tentativas));
                     stopSelf();
                     new Thread(PostMultiplosService.this).start();
                 } else {
@@ -345,10 +301,6 @@ public class PostMultiplosService extends Service implements Runnable {
                         intent.putExtra("ENVIADOS", enviados);
                         intent.putExtra("IDS_HISTORICO", ids_historico);
                         p = PendingIntent.getService(this, 0, intent, 0);
-                        /*
-                        nt.tickerText = "Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")";
-                        nt.setLatestEventInfo(this, "Arks (" + enviados.size() + "/" + imagens.size() + ")", "Erro de conexão. Clique para reenviar.", p);
-                        */
                         mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
                         mBuilder.setContentTitle("Arks (" + enviados.size() + "/" + imagens.size() + ")");
                         mBuilder.setContentText("Erro de conexão. Clique para reenviar.");
@@ -357,10 +309,6 @@ public class PostMultiplosService extends Service implements Runnable {
                         intent.putExtra("ENVIADOS", enviados);
                         intent.putExtra("IDS_HISTORICO", ids_historico);
                         p = PendingIntent.getService(this, 0, intent, 0);
-                        /*
-                        nt.tickerText = "Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")";
-                        nt.setLatestEventInfo(this, "Arks (" + enviados.size() + "/" + imagens.size() + ")", "Ocorreu um erro. Clique para reenviar.", p);
-                        */
                         mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
                         mBuilder.setContentTitle("Arks (" + enviados.size() + "/" + imagens.size() + ")");
                         mBuilder.setContentText("Ocorreu um erro. Clique para reenviar.");
@@ -368,10 +316,6 @@ public class PostMultiplosService extends Service implements Runnable {
                     }
 
                     stopSelf();
-                    /*
-                    nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                    notificationManager.notify((int) Math.round(Math.random()), nt);
-                    */
                     mBuilder.setProgress(0,0,false);
                     mBuilder.setVibrate(new long[]{100, 2000, 1000, 2000});
                     notificationManager.notify(id_notification, mBuilder.build());
@@ -391,13 +335,8 @@ public class PostMultiplosService extends Service implements Runnable {
             return contentUri.getPath();
         }
 
-        // can post image
         String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(contentUri,
-                proj, // Which columns to return
-                null,       // WHERE clause; which rows to return (all rows)
-                null,       // WHERE clause selection arguments (none)
-                null); // Order-by clause (ascending by name)
+        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null); 
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
 
@@ -422,12 +361,6 @@ public class PostMultiplosService extends Service implements Runnable {
 
         id = db.insert("historico", "_id", ctv);
 
-        if (id > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
-
         db.close();
 
         return id;
@@ -442,12 +375,6 @@ public class PostMultiplosService extends Service implements Runnable {
         ctv.put("data", getDateTime());
 
         Log.d("PostService", ctv.toString());
-
-        if (db.update("historico", ctv, "_id=?", new String[]{String.valueOf(id)}) > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
 
         db.close();
     }

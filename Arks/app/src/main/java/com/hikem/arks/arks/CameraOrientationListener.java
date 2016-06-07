@@ -4,19 +4,10 @@ package com.hikem.arks.arks;
  * Created by Makem2 on 13/02/2015.
  */
 
-        import android.content.Context;
-        import android.hardware.SensorManager;
-        import android.view.OrientationEventListener;
+import android.content.Context;
+import android.hardware.SensorManager;
+import android.view.OrientationEventListener;
 
-/**
- * Orientation listener to remember the device's orientation when the user presses
- * the shutter button.
- *
- * The orientation will be normalized to return it in steps of 90 degrees
- * (0, 90, 180, 270).
- *
- * @author Sebastian Kaspari <sebastian@androidzeitgeist.com>
- */
 public class CameraOrientationListener extends OrientationEventListener {
     private int currentNormalizedOrientation;
     private int rememberedNormalizedOrientation;

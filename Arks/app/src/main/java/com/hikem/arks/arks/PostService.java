@@ -46,7 +46,6 @@ public class PostService extends Service implements Runnable {
     long id_historico = 0;
     PendingIntent p;
     NotificationManager notificationManager;
-    //NotificationManager notificationManager2;
     NotificationCompat.Builder mBuilder;
     Notification nt;
     String status = "";
@@ -82,8 +81,6 @@ public class PostService extends Service implements Runnable {
 
         tentativas++;
 
-
-        // NOTIFICATION PROGRESS BAR
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mBuilder = new NotificationCompat.Builder(this);
         mBuilder.setTicker("Arks - Status de envio (0/1)");
@@ -92,35 +89,14 @@ public class PostService extends Service implements Runnable {
         mBuilder.setAutoCancel(true);
         mBuilder.setProgress(0, 0, true);
         notificationManager.notify(id_notification, mBuilder.build());
-        /*
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nt = new Notification(R.drawable.arkslogo, "Arks - Status de envio", System.currentTimeMillis());
-        nt.flags |= Notification.FLAG_AUTO_CANCEL;
-        */
 
         try {
 
             Uri imageUri = (Uri) intent.getParcelableExtra(Intent.EXTRA_STREAM);
             String pathToOurFile = getRealPathFromURI(imageUri);
-            //String pathToOurFile = getRealPathFromURI(intent);
-
-/*
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-        mBuilder.setContentTitle("Arks").setContentText("Enviando arquivo...").setSmallIcon(R.drawable.arkslogo);
-        mBuilder.setAutoCancel(true);
-        mBuilder.setTicker("Arks");
-        mBuilder.setContentTitle("Arks");
-        mBuilder.setContentText("ERRO");
-        mBuilder.setProgress(0,0,false);
-        mBuilder.setVibrate(new long[]{100, 2000, 1000, 2000});
-        notificationManager.notify(1, mBuilder.build());
-*/
 
             DataOutputStream outputStream = null;
             DataInputStream inputStream = null;
-            //String urlServer = "http://192.168.56.1/Arks/post.php";
-            //String urlServer = "http://elcoa.hikem.com.br/AndroidHandler.ashx";
             HashMap<String, String> user = session.getUserDetails();
             String urlServer = "https://ws" + user.get(UserSessionManager.KEY_EMPRESA) + ".arks.com.br/Mobile/SendFile.ashx";
             String lineEnd = "\r\n";
@@ -144,14 +120,12 @@ public class PostService extends Service implements Runnable {
             URL url = new URL(urlServer);
             connection = (HttpURLConnection) url.openConnection();
 
-            // Allow Inputs &amp; Outputs.
             connection.setDoInput(true);
             connection.setDoOutput(true);
             connection.setUseCaches(false);
 
             connection.setChunkedStreamingMode(1024);
 
-            // Set HTTP method to POST.
             connection.setRequestMethod("POST");
 
             connection.setRequestProperty("Connection", "Keep-Alive");
@@ -162,49 +136,27 @@ public class PostService extends Service implements Runnable {
 
             int index = pathToOurFile.lastIndexOf("/");
             String fileName = pathToOurFile.substring(index + 1);
-            outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + user.get(UserSessionManager.KEY_FOLDER) + "_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
+            outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + 
+			user.get(UserSessionManager.KEY_FOLDER) + "_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
             outputStream.writeBytes(lineEnd);
 
             bytesAvailable = fileInputStream.available();
             bufferSize = Math.min(bytesAvailable, maxBufferSize);
             buffer = new byte[bufferSize];
 
-            // Read file
             bytesRead = fileInputStream.read(buffer, 0, bufferSize);
 
-            /*
-            int totalBytes = bytesAvailable;
-            int bytesUpload = 0;
-            int progress = 0;
-
-            bytesUpload += bufferSize;
-            progress = (int)((bytesUpload / (float)totalBytes) * 50);
-            mBuilder.setProgress(100, progress, false);
-            notificationManager2.notify(1, mBuilder.build());
-            */
 
             while (bytesRead > 0) {
                 outputStream.write(buffer, 0, bufferSize);
                 bytesAvailable = fileInputStream.available();
                 bufferSize = Math.min(bytesAvailable, maxBufferSize);
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-
-                /*
-                bytesUpload += bufferSize;
-                progress = (int)((bytesUpload / (float)totalBytes) * 50);
-                mBuilder.setProgress(100, progress, false);
-                notificationManager2.notify(1, mBuilder.build());
-                */
             }
 
             outputStream.writeBytes(lineEnd);
             outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
-            // Responses from the server (code and message)
-            //serverResponseCode = connection.getResponseCode();
-            //serverResponseMessage = connection.getResponseMessage();
-
-            // Return from server
             InputStreamReader ips = new InputStreamReader(connection.getInputStream());
             BufferedReader line = new BufferedReader(ips);
 
@@ -230,22 +182,11 @@ public class PostService extends Service implements Runnable {
                 mBuilder.setContentText("Arquivo enviado com sucesso.");
                 mBuilder.setContentIntent(p);
                 mBuilder.setProgress(0, 0, false);
-
-                /*
-                nt.tickerText = "Arks - Status de envio (1/1)";
-                nt.setLatestEventInfo(this, "Arks (1/1)", "Arquivo enviado com sucesso.", p);
-                status = "Enviado";
-                InsereHistorico(getFileName(imageUri), status);
-                */
-
+				
                 status = "Enviado";
                 EditaHistorico(id_historico, status);
             } else {
                 if (linhaRetorno.equals("There is not enough space on the disk.")) {
-                    /*
-                    nt.tickerText = "Arks - Status de envio (0/1)";
-                    nt.setLatestEventInfo(this, "Arks (0/1)", "Erro: servidor indisponível.", p);
-                    */
                     mBuilder.setTicker("Arks - Status de envio (0/1)");
                     mBuilder.setContentTitle("Arks (0/1)");
                     mBuilder.setContentText("Erro: servidor indisponível.");
@@ -265,10 +206,6 @@ public class PostService extends Service implements Runnable {
                         new Thread(PostService.this).start();
                     } else {
                         p = PendingIntent.getService(this, 0, intent, 0);
-                        /*
-                        nt.tickerText = "Arks - Status de envio (0/1)";
-                        nt.setLatestEventInfo(this, "Arks (0/1)", "Ocorreu um erro. Clique para reenviar.", p);
-                        */
                         mBuilder.setTicker("Arks - Status de envio (0/1)");
                         mBuilder.setContentTitle("Arks (0/1)");
                         mBuilder.setContentText("Ocorreu um erro. Clique para reenviar.");
@@ -276,15 +213,12 @@ public class PostService extends Service implements Runnable {
                         mBuilder.setProgress(0, 0, false);
 
                         status = "Erro";
-                        //InsereHistorico(getFileName(imageUri), status);
                         EditaHistorico(id_historico, status);
                     }
                 }
             }
 
             stopSelf();
-            //nt.vibrate = new long[]{100, 2000, 1000, 2000};
-            //notificationManager.notify((int) Math.round(Math.random()), nt);
             mBuilder.setVibrate(new long[]{100, 2000, 1000, 2000});
             notificationManager.notify(id_notification, mBuilder.build());
 
@@ -301,7 +235,6 @@ public class PostService extends Service implements Runnable {
             mBuilder.setVibrate(new long[]{100, 2000, 1000, 2000});
             notificationManager.notify(id_notification, mBuilder.build());
         } catch (Exception ex) {
-            //Log.d("PostService", ex.getMessage());
 
             if (!getNetworkStatus()) {
                 if (tentativas <= 5) {
@@ -316,14 +249,10 @@ public class PostService extends Service implements Runnable {
                 } else {
                     intent.putExtra("ID_HISTORICO", id_historico);
                     p = PendingIntent.getService(this, 0, intent, 0);
-                    //nt.tickerText = "Arks - Status de envio (0/1)";
-                    //nt.setLatestEventInfo(this, "Arks (0/1)", "Erro de conexão. Clique para reenviar.", p);
 
                     status = "Erro";
                     EditaHistorico(id_historico, status);
                     stopSelf();
-                    //nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                    //notificationManager.notify((int) Math.round(Math.random()), nt);
                     mBuilder.setTicker("Arks - Status de envio (0/1)");
                     mBuilder.setContentTitle("Arks (0/1)");
                     mBuilder.setContentText("Erro de conexão. Clique para reenviar.");
@@ -348,12 +277,7 @@ public class PostService extends Service implements Runnable {
                 }
 
                 if (linhaRetornoERRO.contains("Maximum request length exceeded")) {
-                    //nt.tickerText = "Arks - Status de envio (0/1)";
-                    //nt.setLatestEventInfo(this, "Arks (0/1)", "Erro: arquivo maior que 10 MB.", p);
                     stopSelf();
-                    //nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                    //notificationManager.notify((int) Math.round(Math.random()), nt);
-                    //notificationManager.notify(1, nt);
                     mBuilder.setTicker("Arks - Status de envio (0/1)");
                     mBuilder.setContentTitle("Arks (0/1)");
                     mBuilder.setContentText("Erro: arquivo maior que 10 MB.");
@@ -376,14 +300,9 @@ public class PostService extends Service implements Runnable {
                     } else {
                         intent.putExtra("ID_HISTORICO", id_historico);
                         p = PendingIntent.getService(this, 0, intent, 0);
-                        //nt.tickerText = "Arks - Status de envio (0/1)";
-                        //nt.setLatestEventInfo(this, "Arks (0/1)", "Ocorreu um erro. Clique para reenviar.", p);
                         status = "Erro";
-                        //InsereHistorico(getFileName(imageUri), status);
                         EditaHistorico(id_historico, status);
                         stopSelf();
-                        //nt.vibrate = new long[]{100, 2000, 1000, 2000};
-                        //notificationManager.notify((int) Math.round(Math.random()), nt);
                         mBuilder.setTicker("Arks - Status de envio (0/1)");
                         mBuilder.setContentTitle("Arks (0/1)");
                         mBuilder.setContentText("Ocorreu um erro. Clique para reenviar.");
@@ -412,14 +331,9 @@ public class PostService extends Service implements Runnable {
 
         String ret = "";
 
-        // can post image
         String[] proj = {MediaStore.Images.Media.DATA};
 
-        Cursor cursor = getContentResolver().query(contentUri,
-                proj, // Which columns to return
-                null,       // WHERE clause; which rows to return (all rows)
-                null,       // WHERE clause selection arguments (none)
-                null); // Order-by clause (ascending by name)
+        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null); 
 
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
@@ -444,12 +358,6 @@ public class PostService extends Service implements Runnable {
 
         id = db.insert("historico", "_id", ctv);
 
-        if (id > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
-
         db.close();
 
         return id;
@@ -464,12 +372,6 @@ public class PostService extends Service implements Runnable {
         ctv.put("data", getDateTime());
 
         Log.d("PostService", ctv.toString());
-
-        if (db.update("historico", ctv, "_id=?", new String[]{String.valueOf(id)}) > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
 
         db.close();
     }

@@ -116,7 +116,6 @@ public class LoginActivity extends Activity {
             return POST(urls[0], Autenticar);
         }
 
-        // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
             if(result.contains("ok")) {
@@ -172,10 +171,8 @@ public class LoginActivity extends Activity {
         InputStream inputStream = null;
         String result = "";
         try {
-            // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
 
-            // 2. make POST request to the given URL
             HttpPost httpPost = new HttpPost(url);
 
             Map<String, String> comment = new HashMap<String, String>();
@@ -187,28 +184,17 @@ public class LoginActivity extends Activity {
 
             String json = new GsonBuilder().create().toJson(comment, Map.class);
 
-
-            // ** Alternative way to convert Person object to JSON string usin Jackson Lib
-            // ObjectMapper mapper = new ObjectMapper();
-            // json = mapper.writeValueAsString(person);
-
-            // 5. set json to StringEntity
             StringEntity se = new StringEntity(json);
 
-            // 6. set httpPost Entity
             httpPost.setEntity(se);
 
-            // 7. Set some headers to inform server about the type of the content
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
 
-            // 8. Execute POST request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpPost);
 
-            // 9. receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
 
-            // 10. convert inputstream to string
             if(inputStream != null) {
                 result = convertInputStreamToString(inputStream);
                 Gson gson = new Gson();
@@ -224,7 +210,6 @@ public class LoginActivity extends Activity {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 
-        // 11. return result
         return result;
     }
 

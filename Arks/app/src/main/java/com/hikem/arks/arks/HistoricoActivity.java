@@ -48,12 +48,6 @@ public class HistoricoActivity extends ActionBarActivity {
 
         Cursor cursor = db.rawQuery("SELECT * FROM historico ORDER BY _id DESC", null);
 
-        /*
-        String[] from = { "nome", "status", "data", "data" };
-        int[] to = { R.id.lbl_nome, R.id.lbl_status, R.id.lbl_data, R.id.lbl_hora };
-        SimpleCursorAdapter ad = new SimpleCursorAdapter(getBaseContext(), R.layout.historico_lista, cursor, from, to);
-        */
-
         CustomHistoricoList ad = new CustomHistoricoList(getBaseContext(), cursor);
 
         ListView lv_historico = (ListView) findViewById(R.id.lv_historico);
@@ -64,16 +58,12 @@ public class HistoricoActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_historico, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         if (id == R.id.action_main2) {

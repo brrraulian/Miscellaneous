@@ -93,7 +93,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode==RESULT_OK){
-            //call populatedatamethod
             cbox_pasta.setPressed(false);
             HashMap<String, String> user = session.getUserDetails();
             pasta = new String[] { user.get(UserSessionManager.KEY_FOLDER_NAME) };
@@ -122,22 +121,18 @@ public class MainActivity extends ActionBarActivity {
 
         if(intent.getAction() != null && intent.getType() != null) {
             if (action.equals(Intent.ACTION_SEND) && type != null) {
-                //if (type.startsWith("image/")) {
                     TextView textView = (TextView) findViewById(R.id.txt1);
                     textView.setVisibility(View.VISIBLE);
                     ListView lv_arquivos = (ListView) findViewById(R.id.lv_arquivos);
                     lv_arquivos.setVisibility(View.INVISIBLE);
                     handleSendImage(intent);
-                //}
             } else if (action.equals(Intent.ACTION_SEND_MULTIPLE) && type != null) {
-                //if (type.startsWith("image/")) {
                     TextView textView = (TextView) findViewById(R.id.txt1);
                     textView.setVisibility(View.INVISIBLE);
                     ListView lv_arquivos = (ListView) findViewById(R.id.lv_arquivos);
                     lv_arquivos.setVisibility(View.VISIBLE);
 
                     handleSendMultipleImages(intent);
-                //}
             } else if (action.equals(Intent.ACTION_MAIN)) {
                 if (!session.checkLogin(intent)) {
                     Intent i = new Intent(getApplicationContext(), MainActivity2.class);
@@ -227,7 +222,6 @@ public class MainActivity extends ActionBarActivity {
                     Toast.makeText(getBaseContext(), "Selecione uma pasta de destino.", Toast.LENGTH_LONG).show();
                 }
             } else {
-                //Log.d("PostService", "Sem conexão de internet");
                 Toast.makeText(getBaseContext(), "Sem conexão de internet.", Toast.LENGTH_LONG).show();
             }
         }
@@ -256,25 +250,20 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public static Intent createExplicitFromImplicitIntent(Context context, Intent implicitIntent) {
-        // Retrieve all services that can match the given intent
         PackageManager pm = context.getPackageManager();
         List<ResolveInfo> resolveInfo = pm.queryIntentServices(implicitIntent, 0);
 
-        // Make sure only one match was found
         if (resolveInfo == null || resolveInfo.size() != 1) {
             return null;
         }
 
-        // Get component info and create ComponentName
         ResolveInfo serviceInfo = resolveInfo.get(0);
         String packageName = serviceInfo.serviceInfo.packageName;
         String className = serviceInfo.serviceInfo.name;
         ComponentName component = new ComponentName(packageName, className);
 
-        // Create a new intent. Use the old one for extras and such reuse
         Intent explicitIntent = new Intent(implicitIntent);
 
-        // Set the component to be explicit
         explicitIntent.setComponent(component);
 
         return explicitIntent;
@@ -282,7 +271,6 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }

@@ -57,7 +57,6 @@ public class CameraPostService extends Service implements Runnable {
         new Thread(CameraPostService.this).start();
         session = new UserSessionManager(getApplicationContext());
 
-        //id_notification = (int) Math.round(Math.random());
         id_notification = 1;
 
         return START_NOT_STICKY;
@@ -77,7 +76,6 @@ public class CameraPostService extends Service implements Runnable {
         SQLiteDatabase db = openOrCreateDatabase("arks.db", Context.MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM fila WHERE status = 'Pendente' ORDER BY _id", null);
 
-        //ArrayList<Uri> imagens = intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);
         String arquivo = "";
         ArrayList<Uri> imagens = new ArrayList<>();
 
@@ -112,7 +110,6 @@ public class CameraPostService extends Service implements Runnable {
                     ids_historico.add(id_historico);
                 }
 
-                // NOTIFICATION PROGRESS BAR
                 notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 mBuilder = new NotificationCompat.Builder(this);
                 mBuilder.setTicker("Arks - Status de envio (" + enviados.size() + "/" + imagens.size() + ")");
@@ -128,14 +125,12 @@ public class CameraPostService extends Service implements Runnable {
                 URL url = new URL(urlServer);
                 connection = (HttpURLConnection) url.openConnection();
 
-                // Allow Inputs &amp; Outputs.
                 connection.setDoInput(true);
                 connection.setDoOutput(true);
                 connection.setUseCaches(false);
 
                 connection.setChunkedStreamingMode(1024);
 
-                // Set HTTP method to POST.
                 connection.setRequestMethod("POST");
 
                 connection.setRequestProperty("Connection", "Keep-Alive");
@@ -146,14 +141,14 @@ public class CameraPostService extends Service implements Runnable {
 
                 int index = pathToOurFile.lastIndexOf("/");
                 String fileName = pathToOurFile.substring(index + 1);
-                outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + user.get(UserSessionManager.KEY_FOLDER) + "_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
+                outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + fileName + "_arks_" + 
+				user.get(UserSessionManager.KEY_FOLDER) + "_arks_" + user.get(UserSessionManager.KEY_ID) + "\"" + lineEnd);
                 outputStream.writeBytes(lineEnd);
 
                 bytesAvailable = fileInputStream.available();
                 bufferSize = Math.min(bytesAvailable, maxBufferSize);
                 buffer = new byte[bufferSize];
 
-                // Read file
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
 
                 while (bytesRead > 0) {
@@ -166,11 +161,6 @@ public class CameraPostService extends Service implements Runnable {
                 outputStream.writeBytes(lineEnd);
                 outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
-                // Responses from the server (code and message)
-                //serverResponseCode = connection.getResponseCode();
-                //serverResponseMessage = connection.getResponseMessage();
-
-                // Return from server
                 InputStreamReader ips = new InputStreamReader(connection.getInputStream());
                 BufferedReader line = new BufferedReader(ips);
 
@@ -255,13 +245,8 @@ public class CameraPostService extends Service implements Runnable {
             return contentUri.getPath();
         }
 
-        // can post image
         String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(contentUri,
-                proj, // Which columns to return
-                null,       // WHERE clause; which rows to return (all rows)
-                null,       // WHERE clause selection arguments (none)
-                null); // Order-by clause (ascending by name)
+        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null); 
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
 
@@ -286,12 +271,6 @@ public class CameraPostService extends Service implements Runnable {
 
         id = db.insert("historico", "_id", ctv);
 
-        if (id > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
-
         db.close();
 
         return id;
@@ -306,12 +285,6 @@ public class CameraPostService extends Service implements Runnable {
         ctv.put("data", getDateTime());
 
         Log.d("PostService", ctv.toString());
-
-        if (db.update("historico", ctv, "_id=?", new String[]{String.valueOf(id)}) > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
 
         db.close();
     }
@@ -352,12 +325,6 @@ public class CameraPostService extends Service implements Runnable {
         ContentValues ctv = new ContentValues();
         ctv.put("status", status);
         ctv.put("data", getDateTime());
-
-        if (db.update("fila", ctv, "_id=?", new String[]{String.valueOf(id)}) > 0) {
-            //Log.d("PostService", "Envio registrado com sucesso.");
-        } else {
-            //Log.d("PostService", "Falha no registro do envio.");
-        }
 
         db.close();
     }

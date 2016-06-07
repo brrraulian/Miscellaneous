@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CAT207SAWEMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ANAL_DOC_C190">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="CST_ICMS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CFOP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ALIQ_ICMS" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="VL_OPR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_RED_BC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_IPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="COD_OBS" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ARQUIVOS_GERADOS">
+    <Key>
+      <PropertyRef Name="ID_ARQUIVO" />
+    </Key>
+    <Property Name="ID_ARQUIVO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ARQUIVO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IVA_PROPRIO" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PMC" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PERIODO_ARQUIVO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="PERIODO_GERACAO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DEVOLUCAO_C113">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IND_OPER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IND_EMIT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COD_PART" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MOD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SUB" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="DT_DOC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DOC_FISCAL_C100">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="IND_OPER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IND_EMIT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COD_PART" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MOD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="COD_SIT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CHV_NFE" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
+    <Property Name="DT_DOC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DT_E_S" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="VL_DOC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IND_PGTO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VL_DESC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ABAT_NT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_MERC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IND_FRT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VL_FRT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_SEG" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_OUT_DA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_IPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_PIS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_COFINS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_PIS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_COFINS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ENQ_OP">
+    <Key>
+      <PropertyRef Name="ID_ENQ_OP" />
+    </Key>
+    <Property Name="ID_ENQ_OP" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_ENQUADRAMENTO" Type="Int32" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="COMPROV_OP" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ENQUADRAMENTO_5D">
+    <Key>
+      <PropertyRef Name="COD_ENQUADRAMENTO" />
+    </Key>
+    <Property Name="COD_ENQUADRAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_HIP_GER" Type="Int32" />
+    <Property Name="ANEXO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ARTIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INCISO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ALINEA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PARAGRAFO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LETRA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OBS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ENTIDADE_0000">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="COD_VER" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="COD_FIN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DT_INI" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="DT_FIN" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="IE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MUN" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="IM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SUFRAMA" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="IND_PERFIL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IND_ATIV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ENTIDADE_COMPL_0005">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="FANTASIA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="END" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NUM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COMPL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BAIRRO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GIA">
+    <Key>
+      <PropertyRef Name="ID_GIA" />
+    </Key>
+    <Property Name="ID_GIA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VALOR_CONTABIL" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BASE_CALCULO" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IMPOSTO" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CFOP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO_GIA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="PERIODO_ARQUIVO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITEM_0200">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="COD_ITEM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DESCR_ITEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="COD_BARRA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="COD_ANT_ITEM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="UNID_INV" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TIPO_ITEM" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="COD_NCM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="EX_IPI" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="COD_GEN" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="COD_LST" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ALIQ_ICMS" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITENS_DOC_C170">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="NUM_ITEM" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="COD_ITEM" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DESCR_COMPL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="QTD" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="UNID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="VL_ITEM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_DESC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IND_MOV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CST_ICMS" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CFOP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="COD_NAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VL_BC_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ICMS" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="VL_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IND_APUR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CST_IPI" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="COD_ENQ" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="VL_BC_IPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_IPI" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="VL_IPI" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CST_PIS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="VL_BC_PIS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_PIS_PCT" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="QUANT_BC_PIS" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="ALIQ_PIS" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VL_PIS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CST_COFINS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="VL_BC_COFINS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_COFINS_PCT" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="QUANT_BC_COFINS" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="ALIQ_COFINS" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VL_COFINS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="COD_CTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PARTICIPANTE_0150">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="COD_PART" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_PAIS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="IE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MUN" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="SUFRAMA" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="END" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NUM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COMPL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="BAIRRO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="CEP" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="v_150_C100_C190_ENQ_OP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="NUM_DOC" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="COD_PART" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="SER" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CHV_NFE" Type="String" MaxLength="44" FixedLength="false" Unicode="false" />
+    <Property Name="DT_DOC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DT_E_S" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="VL_DOC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_DESC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_MERC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PERIODO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MOD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="VL_BC_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="COMPROV_OP" Type="Boolean" />
+    <Property Name="COD_ENQUADRAMENTO" Type="Int32" />
+    <Property Name="CFOP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="VL_OPR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ICMS" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="COD_HIP_GER" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CAT207SAWEMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ANAL_DOC_C190" EntityType="Self.ANAL_DOC_C190" />
+    <EntitySet Name="ARQUIVOS_GERADOS" EntityType="Self.ARQUIVOS_GERADOS" />
+    <EntitySet Name="DEVOLUCAO_C113" EntityType="Self.DEVOLUCAO_C113" />
+    <EntitySet Name="DOC_FISCAL_C100" EntityType="Self.DOC_FISCAL_C100" />
+    <EntitySet Name="ENQ_OP" EntityType="Self.ENQ_OP" />
+    <EntitySet Name="ENQUADRAMENTO_5D" EntityType="Self.ENQUADRAMENTO_5D" />
+    <EntitySet Name="ENTIDADE_0000" EntityType="Self.ENTIDADE_0000" />
+    <EntitySet Name="ENTIDADE_COMPL_0005" EntityType="Self.ENTIDADE_COMPL_0005" />
+    <EntitySet Name="GIA" EntityType="Self.GIA" />
+    <EntitySet Name="ITEM_0200" EntityType="Self.ITEM_0200" />
+    <EntitySet Name="ITENS_DOC_C170" EntityType="Self.ITENS_DOC_C170" />
+    <EntitySet Name="PARTICIPANTE_0150" EntityType="Self.PARTICIPANTE_0150" />
+    <EntitySet Name="v_150_C100_C190_ENQ_OP" EntityType="Self.v_150_C100_C190_ENQ_OP" />
+  </EntityContainer>
+</Schema>

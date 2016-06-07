@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ef_tabelas.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ANAL_DOC_C190">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="CST_ICMS" Type="varchar" MaxLength="3" />
+    <Property Name="CFOP" Type="varchar" MaxLength="4" />
+    <Property Name="ALIQ_ICMS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="VL_OPR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_RED_BC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_IPI" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="COD_OBS" Type="varchar" MaxLength="6" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="ARQUIVOS_GERADOS">
+    <Key>
+      <PropertyRef Name="ID_ARQUIVO" />
+    </Key>
+    <Property Name="ID_ARQUIVO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ARQUIVO" Type="varchar" MaxLength="150" />
+    <Property Name="IVA_PROPRIO" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PMC" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PERIODO_ARQUIVO" Type="char" MaxLength="6" />
+    <Property Name="PERIODO_GERACAO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="AUX_FINALIDADE">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="text" />
+  </EntityType>
+  <EntityType Name="AUX_HIPOTESE_GERACAO">
+    <Key>
+      <PropertyRef Name="COD_HIP_GER" />
+    </Key>
+    <Property Name="COD_HIP_GER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HIP_GER" Type="text" />
+  </EntityType>
+  <EntityType Name="AUX_VERSAO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VERSAO" Type="varchar" MaxLength="10" />
+    <Property Name="INSTITUIDO_POR" Type="varchar" MaxLength="150" />
+    <Property Name="ALTERADO_POR" Type="varchar" MaxLength="150" />
+    <Property Name="OBRIGATORIEDADE" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="DEVOLUCAO_C113">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="IND_OPER" Type="char" MaxLength="1" />
+    <Property Name="IND_EMIT" Type="char" MaxLength="1" />
+    <Property Name="COD_PART" Type="varchar" MaxLength="60" />
+    <Property Name="COD_MOD" Type="varchar" MaxLength="2" />
+    <Property Name="SER" Type="varchar" MaxLength="3" />
+    <Property Name="SUB" Type="varchar" MaxLength="3" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+    <Property Name="DT_DOC" Type="varchar" MaxLength="8" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="DOC_FISCAL_C100">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="IND_OPER" Type="char" MaxLength="1" />
+    <Property Name="IND_EMIT" Type="char" MaxLength="1" />
+    <Property Name="COD_PART" Type="varchar" MaxLength="60" />
+    <Property Name="COD_MOD" Type="varchar" MaxLength="2" />
+    <Property Name="COD_SIT" Type="varchar" MaxLength="2" />
+    <Property Name="SER" Type="varchar" MaxLength="3" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+    <Property Name="CHV_NFE" Type="varchar" MaxLength="44" />
+    <Property Name="DT_DOC" Type="varchar" MaxLength="8" />
+    <Property Name="DT_E_S" Type="varchar" MaxLength="8" />
+    <Property Name="VL_DOC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IND_PGTO" Type="char" MaxLength="1" />
+    <Property Name="VL_DESC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ABAT_NT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_MERC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IND_FRT" Type="char" MaxLength="1" />
+    <Property Name="VL_FRT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_SEG" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_OUT_DA" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_IPI" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_PIS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_COFINS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_PIS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_COFINS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ENQ_OP">
+    <Key>
+      <PropertyRef Name="ID_ENQ_OP" />
+    </Key>
+    <Property Name="ID_ENQ_OP" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_ENQUADRAMENTO" Type="int" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="COMPROV_OP" Type="bit" />
+  </EntityType>
+  <EntityType Name="ENQUADRAMENTO_5D">
+    <Key>
+      <PropertyRef Name="COD_ENQUADRAMENTO" />
+    </Key>
+    <Property Name="COD_ENQUADRAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_HIP_GER" Type="int" />
+    <Property Name="ANEXO" Type="varchar" MaxLength="20" />
+    <Property Name="ARTIGO" Type="varchar" MaxLength="20" />
+    <Property Name="INCISO" Type="varchar" MaxLength="20" />
+    <Property Name="ALINEA" Type="varchar" MaxLength="20" />
+    <Property Name="PARAGRAFO" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM" Type="varchar" MaxLength="20" />
+    <Property Name="LETRA" Type="varchar" MaxLength="20" />
+    <Property Name="OBS" Type="text" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ENTIDADE_0000">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="COD_VER" Type="varchar" MaxLength="3" />
+    <Property Name="COD_FIN" Type="char" MaxLength="1" />
+    <Property Name="DT_INI" Type="char" MaxLength="8" />
+    <Property Name="DT_FIN" Type="char" MaxLength="8" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="14" />
+    <Property Name="CPF" Type="varchar" MaxLength="11" />
+    <Property Name="UF" Type="char" MaxLength="2" />
+    <Property Name="IE" Type="varchar" MaxLength="14" />
+    <Property Name="COD_MUN" Type="varchar" MaxLength="7" />
+    <Property Name="IM" Type="text" />
+    <Property Name="SUFRAMA" Type="varchar" MaxLength="9" />
+    <Property Name="IND_PERFIL" Type="char" MaxLength="1" />
+    <Property Name="IND_ATIV" Type="char" MaxLength="1" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ENTIDADE_COMPL_0005">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="FANTASIA" Type="varchar" MaxLength="60" />
+    <Property Name="CEP" Type="varchar" MaxLength="8" />
+    <Property Name="END" Type="varchar" MaxLength="60" />
+    <Property Name="NUM" Type="varchar" MaxLength="10" />
+    <Property Name="COMPL" Type="varchar" MaxLength="60" />
+    <Property Name="BAIRRO" Type="varchar" MaxLength="60" />
+    <Property Name="FONE" Type="varchar" MaxLength="11" />
+    <Property Name="FAX" Type="varchar" MaxLength="11" />
+    <Property Name="EMAIL" Type="text" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="GIA">
+    <Key>
+      <PropertyRef Name="ID_GIA" />
+    </Key>
+    <Property Name="ID_GIA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VALOR_CONTABIL" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BASE_CALCULO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IMPOSTO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CFOP" Type="varchar" MaxLength="5" />
+    <Property Name="PERIODO_GIA" Type="char" MaxLength="6" />
+    <Property Name="PERIODO_ARQUIVO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ITEM_0200">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="COD_ITEM" Type="varchar" MaxLength="60" />
+    <Property Name="DESCR_ITEM" Type="text" />
+    <Property Name="COD_BARRA" Type="text" />
+    <Property Name="COD_ANT_ITEM" Type="varchar" MaxLength="60" />
+    <Property Name="UNID_INV" Type="varchar" MaxLength="6" />
+    <Property Name="TIPO_ITEM" Type="char" MaxLength="2" />
+    <Property Name="COD_NCM" Type="varchar" MaxLength="8" />
+    <Property Name="EX_IPI" Type="varchar" MaxLength="3" />
+    <Property Name="COD_GEN" Type="varchar" MaxLength="2" />
+    <Property Name="COD_LST" Type="varchar" MaxLength="4" />
+    <Property Name="ALIQ_ICMS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ITENS_DOC_C170">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="NUM_ITEM" Type="varchar" MaxLength="3" />
+    <Property Name="COD_ITEM" Type="varchar" MaxLength="60" />
+    <Property Name="DESCR_COMPL" Type="text" />
+    <Property Name="QTD" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="UNID" Type="varchar" MaxLength="6" />
+    <Property Name="VL_ITEM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_DESC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IND_MOV" Type="char" MaxLength="1" />
+    <Property Name="CST_ICMS" Type="varchar" MaxLength="3" />
+    <Property Name="CFOP" Type="varchar" MaxLength="4" />
+    <Property Name="COD_NAT" Type="varchar" MaxLength="10" />
+    <Property Name="VL_BC_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ICMS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="VL_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_BC_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS_ST" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IND_APUR" Type="char" MaxLength="1" />
+    <Property Name="CST_IPI" Type="varchar" MaxLength="2" />
+    <Property Name="COD_ENQ" Type="varchar" MaxLength="3" />
+    <Property Name="VL_BC_IPI" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_IPI" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="VL_IPI" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CST_PIS" Type="varchar" MaxLength="2" />
+    <Property Name="VL_BC_PIS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_PIS_PCT" Type="decimal" Precision="8" Scale="4" />
+    <Property Name="QUANT_BC_PIS" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="ALIQ_PIS" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VL_PIS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CST_COFINS" Type="varchar" MaxLength="2" />
+    <Property Name="VL_BC_COFINS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_COFINS_PCT" Type="decimal" Precision="8" Scale="4" />
+    <Property Name="QUANT_BC_COFINS" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="ALIQ_COFINS" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VL_COFINS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="COD_CTA" Type="text" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="PARTICIPANTE_0150">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG" Type="char" MaxLength="4" />
+    <Property Name="COD_PART" Type="varchar" MaxLength="60" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" />
+    <Property Name="COD_PAIS" Type="varchar" MaxLength="5" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="14" />
+    <Property Name="CPF" Type="varchar" MaxLength="11" />
+    <Property Name="IE" Type="varchar" MaxLength="14" />
+    <Property Name="COD_MUN" Type="varchar" MaxLength="7" />
+    <Property Name="SUFRAMA" Type="varchar" MaxLength="9" />
+    <Property Name="END" Type="varchar" MaxLength="60" />
+    <Property Name="NUM" Type="varchar" MaxLength="10" />
+    <Property Name="COMPL" Type="varchar" MaxLength="60" />
+    <Property Name="BAIRRO" Type="varchar" MaxLength="60" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="UF" Type="char" MaxLength="2" />
+    <Property Name="CEP" Type="char" MaxLength="8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CAT207SAWEM.dbo.v_150_C100_C190_ENQ_OP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_150_C100_C190_ENQ_OP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="NUM_DOC" Type="varchar" MaxLength="9" />
+    <Property Name="COD_PART" Type="varchar" MaxLength="60" />
+    <Property Name="SER" Type="varchar" MaxLength="3" />
+    <Property Name="CHV_NFE" Type="varchar" MaxLength="44" />
+    <Property Name="DT_DOC" Type="varchar" MaxLength="8" />
+    <Property Name="DT_E_S" Type="varchar" MaxLength="8" />
+    <Property Name="VL_DOC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_DESC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_MERC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="14" />
+    <Property Name="COD_MOD" Type="varchar" MaxLength="2" />
+    <Property Name="VL_BC_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VL_ICMS" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CPF" Type="varchar" MaxLength="11" />
+    <Property Name="COMPROV_OP" Type="bit" />
+    <Property Name="COD_ENQUADRAMENTO" Type="int" />
+    <Property Name="CFOP" Type="varchar" MaxLength="4" />
+    <Property Name="VL_OPR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ALIQ_ICMS" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="UF" Type="char" MaxLength="2" />
+    <Property Name="COD_HIP_GER" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CAT207SAWEM.dbo.v_ENQUADRAMENTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_ENQUADRAMENTO">
+    <Key>
+      <PropertyRef Name="COD_ENQUADRAMENTO" />
+    </Key>
+    <Property Name="COD_ENQUADRAMENTO" Type="int" Nullable="false" />
+    <Property Name="COD_HIP_GER" Type="int" />
+    <Property Name="ANEXO" Type="varchar" MaxLength="20" />
+    <Property Name="ARTIGO" Type="varchar" MaxLength="20" />
+    <Property Name="INCISO" Type="varchar" MaxLength="20" />
+    <Property Name="ALINEA" Type="varchar" MaxLength="20" />
+    <Property Name="PARAGRAFO" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM" Type="varchar" MaxLength="20" />
+    <Property Name="LETRA" Type="varchar" MaxLength="20" />
+    <Property Name="OBS" Type="text" />
+    <Property Name="PERIODO" Type="char" MaxLength="6" />
+    <Property Name="HIP_GER" Type="text" />
+  </EntityType>
+  <EntityContainer Name="ef_tabelasStoreContainer">
+    <EntitySet Name="ANAL_DOC_C190" EntityType="Self.ANAL_DOC_C190" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARQUIVOS_GERADOS" EntityType="Self.ARQUIVOS_GERADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUX_FINALIDADE" EntityType="Self.AUX_FINALIDADE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUX_HIPOTESE_GERACAO" EntityType="Self.AUX_HIPOTESE_GERACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUX_VERSAO" EntityType="Self.AUX_VERSAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEVOLUCAO_C113" EntityType="Self.DEVOLUCAO_C113" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOC_FISCAL_C100" EntityType="Self.DOC_FISCAL_C100" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENQ_OP" EntityType="Self.ENQ_OP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENQUADRAMENTO_5D" EntityType="Self.ENQUADRAMENTO_5D" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENTIDADE_0000" EntityType="Self.ENTIDADE_0000" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENTIDADE_COMPL_0005" EntityType="Self.ENTIDADE_COMPL_0005" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIA" EntityType="Self.GIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITEM_0200" EntityType="Self.ITEM_0200" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITENS_DOC_C170" EntityType="Self.ITENS_DOC_C170" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARTICIPANTE_0150" EntityType="Self.PARTICIPANTE_0150" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="v_150_C100_C190_ENQ_OP" EntityType="Self.v_150_C100_C190_ENQ_OP" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_150_C100_C190_ENQ_OP].[ID] AS [ID], 
+    [v_150_C100_C190_ENQ_OP].[NUM_DOC] AS [NUM_DOC], 
+    [v_150_C100_C190_ENQ_OP].[COD_PART] AS [COD_PART], 
+    [v_150_C100_C190_ENQ_OP].[SER] AS [SER], 
+    [v_150_C100_C190_ENQ_OP].[CHV_NFE] AS [CHV_NFE], 
+    [v_150_C100_C190_ENQ_OP].[DT_DOC] AS [DT_DOC], 
+    [v_150_C100_C190_ENQ_OP].[DT_E_S] AS [DT_E_S], 
+    [v_150_C100_C190_ENQ_OP].[VL_DOC] AS [VL_DOC], 
+    [v_150_C100_C190_ENQ_OP].[VL_DESC] AS [VL_DESC], 
+    [v_150_C100_C190_ENQ_OP].[VL_MERC] AS [VL_MERC], 
+    [v_150_C100_C190_ENQ_OP].[PERIODO] AS [PERIODO], 
+    [v_150_C100_C190_ENQ_OP].[NOME] AS [NOME], 
+    [v_150_C100_C190_ENQ_OP].[CNPJ] AS [CNPJ], 
+    [v_150_C100_C190_ENQ_OP].[COD_MOD] AS [COD_MOD], 
+    [v_150_C100_C190_ENQ_OP].[VL_BC_ICMS] AS [VL_BC_ICMS], 
+    [v_150_C100_C190_ENQ_OP].[VL_ICMS] AS [VL_ICMS], 
+    [v_150_C100_C190_ENQ_OP].[CPF] AS [CPF], 
+    [v_150_C100_C190_ENQ_OP].[COMPROV_OP] AS [COMPROV_OP], 
+    [v_150_C100_C190_ENQ_OP].[COD_ENQUADRAMENTO] AS [COD_ENQUADRAMENTO], 
+    [v_150_C100_C190_ENQ_OP].[CFOP] AS [CFOP], 
+    [v_150_C100_C190_ENQ_OP].[VL_OPR] AS [VL_OPR], 
+    [v_150_C100_C190_ENQ_OP].[ALIQ_ICMS] AS [ALIQ_ICMS], 
+    [v_150_C100_C190_ENQ_OP].[UF] AS [UF], 
+    [v_150_C100_C190_ENQ_OP].[COD_HIP_GER] AS [COD_HIP_GER]
+    FROM [dbo].[v_150_C100_C190_ENQ_OP] AS [v_150_C100_C190_ENQ_OP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_ENQUADRAMENTO" EntityType="Self.v_ENQUADRAMENTO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_ENQUADRAMENTO].[COD_ENQUADRAMENTO] AS [COD_ENQUADRAMENTO], 
+    [v_ENQUADRAMENTO].[COD_HIP_GER] AS [COD_HIP_GER], 
+    [v_ENQUADRAMENTO].[ANEXO] AS [ANEXO], 
+    [v_ENQUADRAMENTO].[ARTIGO] AS [ARTIGO], 
+    [v_ENQUADRAMENTO].[INCISO] AS [INCISO], 
+    [v_ENQUADRAMENTO].[ALINEA] AS [ALINEA], 
+    [v_ENQUADRAMENTO].[PARAGRAFO] AS [PARAGRAFO], 
+    [v_ENQUADRAMENTO].[ITEM] AS [ITEM], 
+    [v_ENQUADRAMENTO].[LETRA] AS [LETRA], 
+    [v_ENQUADRAMENTO].[OBS] AS [OBS], 
+    [v_ENQUADRAMENTO].[PERIODO] AS [PERIODO], 
+    [v_ENQUADRAMENTO].[HIP_GER] AS [HIP_GER]
+    FROM [dbo].[v_ENQUADRAMENTO] AS [v_ENQUADRAMENTO]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,87 @@
+﻿body {    
+    background-color: gray;
+}
+
+.bg {
+    width: 20%;
+}
+
+.table {    
+    background-color: white;
+    width: 100%;
+}
+
+.td {
+    text-align: center;
+}
+
+.tdBtn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titulo {
+    text-align: center;
+    font: bold 20px Verdana;
+    color: Gray;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 3px lightgray;
+}
+
+.botao {
+    width: 80px;
+    height: 30px;
+    font: bold 12px Verdana;
+    color: gray;
+}
+
+#Grid {
+    width: 100%;
+    margin-bottom: 10px;
+    font: 14px arial;
+    color: black;
+}
+
+.GridRow {    
+    font: 14px arial;
+    color: black;
+}
+
+.tableNovo {    
+    padding-bottom: 20px;
+    width: 400px;
+}
+
+.tableNovoBtn {    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.tdLabel {
+    padding-top: 20px;
+    text-align: center;
+    font: bold 14px Verdana;
+    color: gray;
+}
+
+.tdCampo {
+    text-align: center;
+}
+
+.campoTxt {
+    width: 350px;
+    height: 30px;
+    font: 18px Verdana;
+    color: gray;
+}
+
+.campoCbox {
+    width: 150px;
+    height: 30px;
+    font: 18px Verdana;
+    color: gray;
+}

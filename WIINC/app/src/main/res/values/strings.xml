@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WIINC</string>
+    <string name="action_logout">Logout</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_login">Login</string>
+    <string name="prompt_senha">Senha</string>
+    <string name="action_login">Logar</string>
+    <string name="title_activity_feed">Feeds</string>
+
+</resources>

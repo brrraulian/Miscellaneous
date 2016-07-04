@@ -1,28 +1,19 @@
-package com.arks.checklist.watermelon;
+package com.example.arks.watermelon;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.google.gson.GsonBuilder;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.BufferedReader;
@@ -30,40 +21,32 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
-public class List extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity {
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     ProgressDialog ringProgressDialog;
-    ListView lv_feed;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
 
         pref = getApplicationContext().getSharedPreferences("SharedPreferences", 0);
         editor = pref.edit();
 
-        lv_feed = (ListView)findViewById(R.id.lv_feed);
-        lv_feed.setEmptyView(findViewById(R.id.emptyList));
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-        ringProgressDialog = ProgressDialog.show(MainActivity.this, "Por favor, aguarde...", "Carregando feeds...", true);
+        ringProgressDialog = ProgressDialog.show(ListActivity.this, "Por favor, aguarde...", "Carregando feeds...", true);
         ringProgressDialog.setCancelable(true);
         ringProgressDialog.onStart();
 
@@ -71,12 +54,12 @@ public class List extends AppCompatActivity {
     }
 
 
-    private class importacaoFeedTask extends AsyncTask<String, Void, CustomListAdapter> {
+    private class importacaoFeedTask extends AsyncTask<String, Void, RecyclerView.Adapter> {
 
         @Override
-        protected CustomListAdapter doInBackground(String... urls) {
+        protected RecyclerView.Adapter doInBackground(String... urls) {
 
-            CustomListAdapter adapter = null;
+            adapter = null;
 
             String url = "http://testwatermelon.azurewebsites.net/todo/api/v1.0/tasks";
             InputStream inputStream = null;
@@ -127,7 +110,18 @@ public class List extends AppCompatActivity {
                             img[i] = Drawable.createFromStream(is, "src name");
                         }
 
-                        adapter = new CustomListAdapter(getBaseContext(), nome, img, idade);
+                        List<Dados> lista = new ArrayList<>();
+                        //String[] nome = new String[]{"nome1", "nome2", "nome3"};
+                        //String[] idade = new String[]{"idade1", "idade2", "idade3"};
+                        //int[] picture_url = new int[]{R.drawable.logo, R.drawable.logo, R.drawable.logo};
+
+                        for (int i = 0; i < par.length; i++) {
+                            Dados d = new Dados(nome[i], idade[i], img[i]);
+                            lista.add(d);
+                        }
+
+                        adapter = new CustomAdapter(getBaseContext(), lista);
+
                     }
                 }
             }
@@ -135,15 +129,14 @@ public class List extends AppCompatActivity {
                 adapter = null;
             }
 
-
             return adapter;
         }
 
-        protected void onPostExecute(CustomListAdapter result) {
+        protected void onPostExecute(RecyclerView.Adapter result) {
             if(result != null) {
                 try {
 
-                    lv_feed.setAdapter(result);
+                    recyclerView.setAdapter(result);
 
                 } catch (Exception ex) {
                     Toast.makeText(getBaseContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
@@ -167,7 +160,4 @@ public class List extends AppCompatActivity {
         inputStream.close();
         return result;
     }
-
-
-
 }

@@ -1,4 +1,4 @@
-package com.arks.checklist.watermelon;
+package com.example.arks.watermelon;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

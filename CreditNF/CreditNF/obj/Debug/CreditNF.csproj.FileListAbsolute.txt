@@ -1,0 +1,10 @@
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\bin\Debug\CreditNF.exe.config
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\bin\Debug\CreditNF.exe
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\bin\Debug\CreditNF.pdb
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.csprojResolveAssemblyReference.cache
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.csproj.ResolveComReference.cache
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.Form1.resources
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.Properties.Resources.resources
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.csproj.GenerateResource.Cache
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.exe
+c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.pdb

@@ -8,3 +8,13 @@ c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\
 c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.csproj.GenerateResource.Cache
 c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.exe
 c:\users\koki\documents\visual studio 2015\Projects\CreditNF\CreditNF\obj\Debug\CreditNF.pdb
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\bin\Debug\CreditNF.exe.config
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.csproj.ResolveComReference.cache
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.exe
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.pdb
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.csprojResolveAssemblyReference.cache
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.Form1.resources
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.Properties.Resources.resources
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\obj\Debug\CreditNF.csproj.GenerateResource.Cache
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\bin\Debug\CreditNF.exe
+G:\Google Drive\GitHub\Portfolio\CreditNF\CreditNF\bin\Debug\CreditNF.pdb

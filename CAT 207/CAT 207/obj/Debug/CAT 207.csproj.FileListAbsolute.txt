@@ -1,0 +1,73 @@
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\CAT 207.exe.config
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT 207.csprojResolveAssemblyReference.cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT_207.Form1.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT_207.Properties.Resources.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT_207.sped.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT 207.csproj.GenerateResource.Cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\EntityFramework.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\EntityFramework.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Milwaukee\Sistema\CAT 207\obj\Debug\CAT_207.gia.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\CAT 207.exe.config
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\EntityFramework.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\EntityFramework.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT 207.csprojResolveAssemblyReference.cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT_207.Form1.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT_207.gia.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT_207.Properties.Resources.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT_207.sped.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207\CAT 207\obj\Debug\CAT 207.csproj.GenerateResource.Cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\CAT 207.exe.config
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\EntityFramework.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\EntityFramework.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT_207.Form1.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT_207.gia.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT_207.Properties.Resources.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT_207.sped.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - Cópia\CAT 207\obj\Debug\CAT 207.csproj.GenerateResource.Cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\CAT 207.exe.config
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\EntityFramework.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\EntityFramework.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT 207.csprojResolveAssemblyReference.cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT_207.Form1.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT_207.gia.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT_207.Properties.Resources.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT_207.sped.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - ELCOA\CAT 207\obj\Debug\CAT 207.csproj.GenerateResource.Cache
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\CAT 207.exe.config
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\CAT 207.exe
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\CAT 207.pdb
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\EntityFramework.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\EntityFramework.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT_207.Form1.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT_207.gia.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT_207.Properties.Resources.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT_207.sped.resources
+D:\Ricardo\Projetos Hipem\ICMS\CAT 207\Sistema CAT 207 - C100\CAT 207\obj\Debug\CAT 207.csproj.GenerateResource.Cache

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">BancoPAN</string>
+
+
+    <string name="title_wait">Aguarde&#8230;</string>
+
+    <!-- // GAME LIST -->
+    <string name="title_game_list">**Top 100 games**</string>
+
+    <!-- // GAME DETAIL -->
+    <string name="game_detail_label_channels_">Canais: %s</string>
+    <string name="game_detail_label_viewers_">Visualizações: %s</string>
+
+    <!-- // ERROR -->
+    <string name="message_no_connection">Sem conexão com a Internet</string>
+    <string name="message_error_load_game">Falha ao carregar os jogos</string>
+
+    <string name="error_message_timeout">java.net.SocketTimeoutException</string>
+    <string name="error_message_timeout2">onnect</string>
+    <string name="error_message_timeout3">timeout</string>
+    <string name="error_message_timeout4">host</string>
+    <string name="error_message_timeout5">handshake</string>
+    <string name="message_timeout">Sem conexão com a internet</string>
+
+    <string name="error_message_last_page">Não foi encontrado recomendação de produtos, para o cliente informado.</string>
+
+
+    <!-- EMPTY LAYOUT -->
+    <string name="empty_title_generic">Could not load items</string>
+    <string name="empty_subtitle_generic">Pull to load again</string>
+
+    <string name="empty_title_game">Jogos</string>
+    <string name="empty_subtitle_game">Nenhum jogo encontrado</string>
+
+</resources>

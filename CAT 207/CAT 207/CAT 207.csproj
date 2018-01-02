@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61F7D191-C2A9-4701-8196-F5D89E4CBF66}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAT_207</RootNamespace>
+    <AssemblyName>CAT 207</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cepuf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cepuf.Designer.cs">
+      <DependentUpon>cepuf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Associador.cs" />
+    <Compile Include="Classes\Auxiliar.cs" />
+    <Compile Include="Classes\Conexao.cs" />
+    <Compile Include="Classes\Fichas.cs" />
+    <Compile Include="Classes\Gerador.cs" />
+    <Compile Include="Classes\NFGeradoras.cs" />
+    <Compile Include="Classes\Relatorio.cs" />
+    <Compile Include="cnpj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnpj.Designer.cs">
+      <DependentUpon>cnpj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ArquivosGerados.cs" />
+    <Compile Include="DAL\Bloco0\Enquadramento.cs" />
+    <Compile Include="DAL\Bloco0\Participante.cs" />
+    <Compile Include="DAL\EnqOp.cs" />
+    <Compile Include="EF\ANAL_DOC_C190.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ARQUIVOS_GERADOS.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DEVOLUCAO_C113.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DOC_FISCAL_C100.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ef_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ef_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ef_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ENQUADRAMENTO_5D.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ENQ_OP.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ENTIDADE_0000.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ENTIDADE_COMPL_0005.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GIA.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ITEM_0200.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ITENS_DOC_C170.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IVA.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PARTICIPANTE_0150.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\v_150_C100_C190_ENQ_OP.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\v_Sintegra.cs">
+      <DependentUpon>ef_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gia.Designer.cs">
+      <DependentUpon>gia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sped.Designer.cs">
+      <DependentUpon>sped.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gia.resx">
+      <DependentUpon>gia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="sped.resx">
+      <DependentUpon>sped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="EF\ef_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ef_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\ef_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ef_db.Context.cs</LastGenOutput>
+      <DependentUpon>ef_db.edmx</DependentUpon>
+    </None>
+    <None Include="EF\ef_db.edmx.diagram">
+      <DependentUpon>ef_db.edmx</DependentUpon>
+    </None>
+    <None Include="EF\ef_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ef_db.cs</LastGenOutput>
+      <DependentUpon>ef_db.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\Arquivos Gerados\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

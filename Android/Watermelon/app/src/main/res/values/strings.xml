@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Watermelon</string>
+    <string name="facebook_app_id">286057858451627</string>
+    <string name="title_activity_list">ListActivity</string>
+</resources>

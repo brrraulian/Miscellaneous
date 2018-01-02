@@ -1,0 +1,9 @@
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\bin\Microsoft.PythonTools.WebRole.dll
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\bin\AzureSetup.cfg
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\bin\Microsoft.PythonTools.AzureSetup.exe
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\bin\Microsoft.PythonTools.AzureSetup.exe.config
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\bin\wfastcgi.py
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\obj\Release\deployment-updated-pyvenv.cfg
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\ptvs_virtualenv_proxy.py
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\obj\Release\web.config
+D:\Google Drive\Profissional\Watermelon\teste\FlaskWebProject\FlaskWebProject\obj\Release\web.debug.config

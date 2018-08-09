@@ -1,0 +1,5 @@
+F:\Google Drive\GitHub\Portfolio\Portfolio\Portfolio\bin\Portfolio.dll.config
+F:\Google Drive\GitHub\Portfolio\Portfolio\Portfolio\bin\Portfolio.dll
+F:\Google Drive\GitHub\Portfolio\Portfolio\Portfolio\bin\Portfolio.pdb
+F:\Google Drive\GitHub\Portfolio\Portfolio\Portfolio\obj\Release\Portfolio.dll
+F:\Google Drive\GitHub\Portfolio\Portfolio\Portfolio\obj\Release\Portfolio.pdb

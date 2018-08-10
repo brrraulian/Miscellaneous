@@ -94,6 +94,7 @@
     <Content Include="img\demo.jpg" />
     <Content Include="img\fundo-rodape.jpg" />
     <Content Include="img\fundo-rodape2.jpg" />
+    <Content Include="img\fundo.jpg" />
     <Content Include="img\fundo-topo.jpg" />
     <Content Include="img\github.png" />
     <Content Include="img\googleplay.png" />

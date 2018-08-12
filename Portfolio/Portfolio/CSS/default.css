@@ -1,0 +1,48 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg-home {
+    background: url(/img/fundo.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center-div {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    color: #fff;
+    width: 800px;
+    height: 10px;
+    font-family: 'Century Schoolbook';
+    text-align: center;
+}
+
+.hello-world {
+    font-size: 14pt;
+    bottom: 65%;
+    top: 0;
+}
+
+.name {
+    font-size: 14pt;
+    bottom: 45%;
+    top: 0;
+}
+
+.feature {
+    font-size: 30pt;
+    font-family: 'Century Schoolbook';
+    font-weight: bold;
+}
+
+.home-text {
+    font-size: 14pt;
+    bottom: 0;
+    top: 0;
+}

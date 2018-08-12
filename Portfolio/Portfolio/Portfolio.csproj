@@ -58,6 +58,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\default.css" />
+    <Content Include="CSS\estilo.css" />
+    <Content Include="CSS\master.css" />
+    <Content Include="Icms.aspx" />
+    <Content Include="Portfolio.Master" />
     <None Include="Properties\PublishProfiles\koki.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -68,10 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Arks.aspx" />
-    <Content Include="DemoList.aspx" />
-    <Content Include="CSS\estilo.css" />
-    <Content Include="Demo.aspx" />
-    <Content Include="Icms.aspx" />
     <Content Include="img\arks.png" />
     <Content Include="img\arks\01.png" />
     <Content Include="img\arks\02.png" />
@@ -91,20 +92,33 @@
     <Content Include="img\arks\16.png" />
     <Content Include="img\arks\17.png" />
     <Content Include="img\arks\18.png" />
-    <Content Include="img\demo.jpg" />
-    <Content Include="img\fundo-rodape.jpg" />
-    <Content Include="img\fundo-rodape2.jpg" />
     <Content Include="img\fundo.jpg" />
-    <Content Include="img\fundo-topo.jpg" />
     <Content Include="img\github.png" />
     <Content Include="img\googleplay.png" />
     <Content Include="img\icms.ico" />
     <Content Include="img\icms.jpg" />
     <Content Include="Default.aspx" />
+    <Content Include="img\projects\arks.png" />
+    <Content Include="img\projects\condor.png" />
+    <Content Include="img\projects\eld2.png" />
+    <Content Include="img\projects\eld.png" />
+    <Content Include="img\projects\ceb.png" />
+    <Content Include="img\projects\condor2.png" />
+    <Content Include="img\projects\ceb2.png" />
+    <Content Include="img\projects\izio.png" />
+    <Content Include="img\projects\pernambucanas.png" />
+    <Content Include="img\projects\pernambucanas2.png" />
+    <Content Include="img\projects\petcare.png" />
+    <Content Include="img\projects\petcare2.png" />
+    <Content Include="img\projects\trr2.png" />
+    <Content Include="img\projects\trr.png" />
+    <Content Include="img\projects\shyre2.png" />
+    <Content Include="img\projects\shyre.png" />
+    <Content Include="img\projects\risque.png" />
+    <Content Include="img\projects\petcare3.png" />
+    <Content Include="img\projects\izio2.png" />
     <Content Include="JavaScript\JavaScript.js" />
-    <Content Include="DemoNew.aspx" />
-    <Content Include="CSS\StyleSheet.css" />
-    <Content Include="Portfolio.aspx" />
+    <Content Include="Portifolio.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -119,19 +133,12 @@
     </Compile>
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\Data.cs" />
-    <Compile Include="DemoList.aspx.cs">
-      <DependentUpon>DemoList.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DemoList.aspx.designer.cs">
-      <DependentUpon>DemoList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Demo.aspx.cs">
-      <DependentUpon>Demo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Demo.aspx.designer.cs">
-      <DependentUpon>Demo.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Icms.aspx.cs">
       <DependentUpon>Icms.aspx</DependentUpon>
@@ -140,26 +147,19 @@
     <Compile Include="Icms.aspx.designer.cs">
       <DependentUpon>Icms.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Portfolio.Master.cs">
+      <DependentUpon>Portfolio.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Portfolio.Master.designer.cs">
+      <DependentUpon>Portfolio.Master</DependentUpon>
     </Compile>
-    <Compile Include="DemoNew.aspx.cs">
-      <DependentUpon>DemoNew.aspx</DependentUpon>
+    <Compile Include="Portifolio.aspx.cs">
+      <DependentUpon>Portifolio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DemoNew.aspx.designer.cs">
-      <DependentUpon>DemoNew.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Portfolio.aspx.cs">
-      <DependentUpon>Portfolio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Portfolio.aspx.designer.cs">
-      <DependentUpon>Portfolio.aspx</DependentUpon>
+    <Compile Include="Portifolio.aspx.designer.cs">
+      <DependentUpon>Portifolio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

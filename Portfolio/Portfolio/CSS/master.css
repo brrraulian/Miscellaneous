@@ -1,0 +1,146 @@
+﻿
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.master {
+    width: 100%;
+    position:fixed;
+    height:100px;
+    background-color: white;
+}
+
+.page {   
+    padding-top:100px;
+    margin:0px;
+}
+
+.master-table {
+    margin-top: 20px;
+}
+
+.master-td {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content:center;
+}
+
+.master-hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bg-about {
+    height: 100%;
+    color: #fff;
+    margin: 0px;
+}
+
+.bg-white {
+    height: 100%;
+    color: #fff;
+    margin: 0px;
+}
+
+.center-div {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    color: #fff;
+    width: 800px;
+    height: 10px;
+    font-family: 'Century Schoolbook';
+    text-align: center;
+}
+
+
+.anchor {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.home-bottom {
+    top: 85%;
+}
+
+.about-top {
+    top: 110%;
+}
+
+.about-bottom {
+    top: 285%;
+}
+
+.projects-top {
+    top: 330%;
+}
+
+.projects-bottom {
+    top: 750%;
+}
+
+.contact-top {
+    top: 830%;
+}
+
+.white {
+    color: #fff;
+}
+
+.black {
+    color: black;
+}
+
+.about {
+    font-size: 18pt;
+    font-family: Arial;
+    text-align: center;
+    color: black;
+}
+
+.margin-left-right {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.about-text {
+    color: black;
+    font-family: 'Century Schoolbook';
+    text-align: left;
+}
+
+hr {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.project-cell {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.project-cell-left {
+    padding-right: 15px;
+}
+
+.project-cell-center {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.project-cell-right {
+    padding-left: 15px;
+}
+
+.project-image {
+    width: 300px;
+}

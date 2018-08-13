@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Ricardo Numa</title>
-    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/default.css" />
 </head>
 <body>
 

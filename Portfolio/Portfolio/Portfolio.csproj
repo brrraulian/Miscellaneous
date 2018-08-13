@@ -62,6 +62,9 @@
     <Content Include="CSS\estilo.css" />
     <Content Include="CSS\master.css" />
     <Content Include="Icms.aspx" />
+    <Content Include="img\github.png" />
+    <Content Include="img\linkedin.png" />
+    <Content Include="img\mail.png" />
     <Content Include="Portfolio.Master" />
     <None Include="Properties\PublishProfiles\koki.pubxml" />
     <None Include="Web.Debug.config">
@@ -93,7 +96,7 @@
     <Content Include="img\arks\17.png" />
     <Content Include="img\arks\18.png" />
     <Content Include="img\fundo.jpg" />
-    <Content Include="img\github.png" />
+    <Content Include="img\github2.png" />
     <Content Include="img\googleplay.png" />
     <Content Include="img\icms.ico" />
     <Content Include="img\icms.jpg" />

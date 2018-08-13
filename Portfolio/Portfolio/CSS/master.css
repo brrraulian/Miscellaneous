@@ -6,24 +6,27 @@ body, html {
 
 .master {
     width: 100%;
-    position:fixed;
-    height:100px;
+    position: fixed;
+    height: 100px;
     background-color: white;
+    margin-top: 20px;
 }
 
-.page {   
-    padding-top:100px;
-    margin:0px;
+.page {
+    padding-top: 100px;
+    margin: 0px;
 }
 
 .master-table {
-    margin-top: 20px;
+    margin: auto;
+    margin-left: 30%;
+    width: 50%;
 }
 
 .master-td {
     padding-left: 10px;
     padding-right: 10px;
-    align-content:center;
+    align-content: center;
 }
 
 .master-hr {
@@ -100,11 +103,11 @@ body, html {
     color: black;
 }
 
-.about {
+.title {
     font-size: 18pt;
     font-family: Arial;
     text-align: center;
-    color: black;
+    color: dimgray;
 }
 
 .margin-left-right {
@@ -113,7 +116,7 @@ body, html {
 }
 
 .about-text {
-    color: black;
+    color: gray;
     font-family: 'Century Schoolbook';
     text-align: left;
 }
@@ -143,4 +146,32 @@ hr {
 
 .project-image {
     width: 300px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.contact-table {
+    margin: auto;
+    margin-left: 35%;
+    width: 50%;
+}
+
+.contact-image {
+    width: 30px;
+}
+
+.contact-td {
+    padding-left: 10px;
+}
+
+.contact {
+    font-size: 12pt;
+    font-family: Century Schoolbook;
+    text-align: center;
+    color: gray;
+    height: 45px;
+    vertical-align: top;
 }

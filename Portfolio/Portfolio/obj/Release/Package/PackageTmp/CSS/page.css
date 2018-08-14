@@ -1,0 +1,146 @@
+﻿.page {
+    padding-top: 70px;
+    margin: 0px;
+}
+
+.bg-about {
+    height: 90vh;
+    margin: 0px;
+}
+
+.bg-projects {
+    height: 200vh;
+    margin: 0px;
+}
+
+.bg-contact {
+    height: 77vh;
+    margin: 0px;
+}
+
+.anchor {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.white {
+    color: #fff;
+}
+
+.black {
+    color: black;
+}
+
+.title {
+    font-size: 18pt;
+    font-family: Arial;
+    text-align: center;
+    color: dimgray;
+    margin-bottom: 50px;
+}
+
+.margin-left-right {
+    background-color: #f1f1f1;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.about-text {
+    color: gray;
+    font-family: 'Century Schoolbook';
+    text-align: left;
+}
+
+.project-cell {
+    padding: 30px 30px 30px 30px;
+}
+
+.project-image {
+    width: 300px;
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .project-image {
+    opacity: 0.2;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    width: 100%;
+    color: black;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.contact-table {
+    margin: auto;
+    margin-left: 23%;
+    width: 50%;
+    position: absolute;
+    top: 610%;
+    bottom: 0;
+}
+
+.contact-image {
+    width: 30px;
+}
+
+.contact-td {
+    padding-left: 10px;
+}
+
+.contact {
+    font-size: 12pt;
+    font-family: Century Schoolbook;
+    text-align: center;
+    color: gray;
+    height: 45px;
+    vertical-align: top;
+}
+
+.footer {
+    font-size: 12pt;
+    font-family: Century Schoolbook;
+    background-color: #333333;
+    color: white;
+    padding-top: 30px;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -61,6 +61,7 @@
     <Content Include="CSS\default.css" />
     <Content Include="CSS\estilo.css" />
     <Content Include="CSS\master.css" />
+    <Content Include="CSS\page.css" />
     <Content Include="Icms.aspx" />
     <Content Include="img\github.png" />
     <Content Include="img\linkedin.png" />

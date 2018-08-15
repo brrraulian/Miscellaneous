@@ -66,7 +66,6 @@
     <Content Include="img\github.png" />
     <Content Include="img\linkedin.png" />
     <Content Include="img\mail.png" />
-    <Content Include="Portfolio.Master" />
     <None Include="Properties\PublishProfiles\koki.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -122,7 +121,6 @@
     <Content Include="img\projects\petcare3.png" />
     <Content Include="img\projects\izio2.png" />
     <Content Include="JavaScript\JavaScript.js" />
-    <Content Include="Portifolio.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -150,20 +148,6 @@
     </Compile>
     <Compile Include="Icms.aspx.designer.cs">
       <DependentUpon>Icms.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Portfolio.Master.cs">
-      <DependentUpon>Portfolio.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Portfolio.Master.designer.cs">
-      <DependentUpon>Portfolio.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Portifolio.aspx.cs">
-      <DependentUpon>Portifolio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Portifolio.aspx.designer.cs">
-      <DependentUpon>Portifolio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

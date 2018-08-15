@@ -110,11 +110,9 @@
 
 .contact-table {
     margin: auto;
-    margin-left: 23%;
-    width: 50%;
-    position: absolute;
-    top: 610%;
-    bottom: 0;
+    width: 60%;
+	padding-top: 10%;
+	padding-left: 15%;
 }
 
 .contact-image {
@@ -125,7 +123,7 @@
     padding-left: 10px;
 }
 
-.contact {
+.contact-text {
     font-size: 12pt;
     font-family: Century Schoolbook;
     text-align: center;

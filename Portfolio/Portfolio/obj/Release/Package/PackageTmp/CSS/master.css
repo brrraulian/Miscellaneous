@@ -2,14 +2,23 @@
 body, html {
     height: 100%;
     margin: 0;
+    overflow: visible;
 }
 
 .master {
     width: 100%;
-    position: fixed;
+    position: relative;
     z-index: 2;
     height: 60px;
-    background-color: #333333;
+    background-color: #f1f1f1;
+}
+
+@supports(position:sticky) {
+    .master {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
 }
 
 .master-table-external {
@@ -33,11 +42,11 @@ body, html {
     width: 30%;
 }
 
-.feature {
+.master-feature {
     font-size: 25pt;
     font-family: 'Century Schoolbook';
     font-weight: bold;
-    color: white;
+    color: #333333;
 }
 
 .master-table {
@@ -53,8 +62,9 @@ body, html {
     text-align: center;
     cursor: pointer;
     outline: none;
-    color: white;
-    background-color: Crimson;
+    color: black;
+    font-family: Arial;
+    background-color: #f1f1f1;
     border: none;
     border-radius: 5px;
     text-decoration: none;

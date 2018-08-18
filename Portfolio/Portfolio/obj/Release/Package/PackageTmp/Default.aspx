@@ -14,26 +14,32 @@
 </head>
 <body>
 
-    <a href="#about">
 
-        <div class="bg-home">
+    <a href="#about" class="button-home">
 
-            <div id="home"></div>
+        <div id="home" class="bg-home">
 
-            <span class="hello-world center-div feature">Hello World!</span>
-
-            <span class="name center-div">I am
-            <br />
-                <span class="feature">Ricardo Numa, 
+            <p class="home-text">
+                <span class="hello-world feature">Hello World!</span>
                 <br />
-                    Software Developer.</span>
-            </span>
+                <br />
+                <br />
+                I am Ricardo Numa,
+                    <br />
+                <span class="feature">Software Developer.</span>
+                <br />
+                <br />
+                <br />
+                Welcome to my website.
 
-            <span class="home-text center-div">Welcome to my website.</span>
+            </p>
 
         </div>
 
     </a>
+
+
+
 
     <div class="master">
 
@@ -70,7 +76,9 @@
                 <td class="master-div"></td>
             </tr>
         </table>
+
     </div>
+
 
 
 
@@ -79,9 +87,13 @@
 
     <div class="margin-left-right">
 
-        <div id="about" class="page bg-about">
+        <div id="about"></div>
+
+        <div class="page bg-about">
 
             <h2 class="title">ABOUT ME</h2>
+
+            <hr class="hr" />
 
             <p class="about-text">Meu nome é Ricardo Numa, tenho 28 anos, sou formado em Administração de Empresas e depois de trabalhar alguns anos na área percebi que não era feliz fazendo aquilo.</p>
             <p class="about-text">
@@ -112,157 +124,169 @@
 
         </div>
 
+        <div id="projects"></div>
 
         <hr />
 
 
-        <div id="projects" class="page bg-projects">
+
+
+
+
+        <div class="bg-projects">
 
 
             <h2 class="title">PROJECTS</h2>
 
-            <table class="center">
+            <hr />
+
+            <table class="table-projects">
                 <tr>
-                    <td class="project-cell project-cell"><a href="Arks.aspx" target="#">
+                    <td class="project-cell"><a href="Arks.aspx" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/arks.png" alt="Arks Capture" />
                             <div class="middle">
                                 <div class="text">
                                     Arks Capture
                                     <br />
-                                    A idéia deste aplicativo era poder fazer upload de fotos, da galeria ou tiradas pelo próprio aplicativo, para o sistema Arks (plataforma corporativa de gerenciamento de arquivos em nuvem).
+                                    <br />
+                                    Android app for photos upload from device's gallery or taken by the app itself, to the Arks system (corporate cloud file management platform).
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="Icms.aspx" target="#">
+                    <td class="project-cell"><a href="Icms.aspx" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/icms.jpg" alt="ICMS" />
+                            <img class="project-image" src="img/projects/icms.png" alt="ICMS" />
                             <div class="middle">
                                 <div class="text">
                                     ICMS
                                     <br />
-                                    Esse sistema desktop foi feito para a geração do arquivo de texto necessário para a solicitação de crédito do ICMS perante a Receita Federal.
+                                    <br />
+                                    Web and desktop system made for text file generation, that is necessary for the ICMS credit request before the Internal Revenue Service.
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="Ceb.aspx" target="#">
+                    <td class="project-cell"><a href="Ceb.aspx" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/ceb.png" alt="Cenoura & Bronze" />
                             <div class="middle">
                                 <div class="text">
                                     Cenoura & Bronze
                                     <br />
-
+                                    <br />
+                                    Android app that enables the use of camera with filters, frames and sharing for social networks, radio, weather, feeds and sunscreen suggestion.
                                 </div>
                             </div>
                         </div>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.izio.condor" target="#">
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.izio.condor" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/condor.png" alt="Clube Condor" />
                             <div class="middle">
                                 <div class="text">
                                     Clube Condor
                                     <br />
-                                    Com o Aplicativo Clube Condor, você poderá ter acesso a ofertas exclusivas e visulizar suas últimas compras.
+                                    <br />
+                                    Android app for purchase consultation, credits balance and receiving offers.
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=com.stoneridge.eld" target="#">
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.stoneridge.eld" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/eld.png" alt="Stoneridge EZ-ELD" />
                             <div class="middle">
                                 <div class="text">
-                                    Stoneridge EZ-ELD
+                                    EZ-ELD Driver App
                                     <br />
-                                    Track your current 24 hour HOS activity, view logs for the last 30 days, check how much driving time you have left and change the Duty Status as you work. This free EZ-ELD Driver App from Stoneridge connects to the EZ-ELD device in your truck via Bluetooth.
-It helps keep you on the right side of HOS rules by showing any violations on-screen, plus you can send logs instantly to Safety Officials during road side inspections. 
+                                    <br />
+                                    Android app used for truck drivers activities tracking done by an EZ-ELD device via Bluetooth, that creates logs that can be used in road side inspections on USA and Canada. 
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="Izio.aspx" target="#">
+                    <td class="project-cell"><a href="Izio.aspx" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/izio.png" alt="Izio" />
+                            <img class="project-image" src="img/projects/pernambucanas.png" alt="Izio" />
                             <div class="middle">
                                 <div class="text">
-                                    Izio
+                                    Auto Atendimento Pernambucanas
                                     <br />
-
+                                    <br />
+                                    Android app installed at the retailer network self-service terminals for payments.
                                 </div>
                             </div>
                         </div>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="project-cell project-cell"><a href="Pernambucanas.aspx" target="#">
+                    <td class="project-cell"><a href="Pernambucanas.aspx" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/pernambucanas.png" alt="Auto Atendimento Pernambucanas" />
+                            <img class="project-image" src="img/projects/pernambucanas2.png" alt="Auto Atendimento Pernambucanas" />
                             <div class="middle">
                                 <div class="text">
-                                    Auto Atendimento Pernambucanas
+                                    Proposta Pernambucanas
                                     <br />
-
+                                    <br />
+                                    Android tablet app used by the retailer network cards and insurance plans sellers.
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.dahora.petcare" target="#">
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.dahora.petcare" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/petcare.png" alt="Bulário Pet Care" />
                             <div class="middle">
                                 <div class="text">
-                                    Petcare
+                                    Bulário Pet Care
                                     <br />
-                                    O Bulário Pet Care para cães e gatos é um aplicativo onde você encontra:
-- mais de 150 medicamentos, seu princípio ativo e nome comercial
-- descrição de uso do medicamento
-- dose para cães e gatos
-- apresentações encontradas
-- exames
+                                    <br />
+                                    Android app for dogs and cats medicine bulletin, check list and feed calculator.
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.hypermarcas.risque" target="#">
+                    <td class="project-cell"><a href="Risque.aspx" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/risque.png" alt="Risqué" />
                             <div class="middle">
                                 <div class="text">
                                     Risqué
                                     <br />
-                                    Escolha suas cores favoritas através do nosso simulador exclusivo e fique por dentro das dicas de esmaltação Risqué.
+                                    <br />
+                                    Android app with color enamel simulator.
                                 </div>
                             </div>
                         </div>
                     </a></td>
                 </tr>
                 <tr>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.shyre" target="#">
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.shyre" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/shyre.png" alt="Shyre" />
                             <div class="middle">
                                 <div class="text">
                                     Shyre
                                     <br />
-                                    App voltado para profissionais de trade marketing, vendas diretas, promoção, propagandistas, manutenção e times de campo.
+                                    <br />
+                                    Android app for routing planning and control, calendar and reports to field teams.
                                 </div>
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell project-cell"><a href="https://play.google.com/store/apps/details?id=com.trrsecuritas.segurados" target="#">
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.trrsecuritas.segurados" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/trr.png" alt="TRR" />
                             <div class="middle">
                                 <div class="text">
                                     TRR
                                     <br />
-                                    TRR APP, um canal de informação, interação e entretenimento cheio de facilidades para economizar o seu tempo e cuidar da sua saúde.
+                                    <br />
+                                    Android app for health plan management, feeds, request and refunds follow-up, accredited network consultation and concierge.
                                 </div>
                             </div>
                         </div>
@@ -276,46 +300,44 @@ It helps keep you on the right side of HOS rules by showing any violations on-sc
         <hr />
 
 
-        <div id="contact" class="page bg-contact">
+
+
+
+
+        <div id="contact" class="bg-contact">
 
 
             <h2 class="title">CONTACT</h2>
 
+            <hr />
+
             <table class="contact-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="https://github.com/brrraulian" target="#">
-                                <img src="img/github.png" class="contact-image" /></a>
-                        </td>
-                        <td class="contact-td">
-                            <span class="contact-text">https://github.com/brrraulian</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="https://linkedin.com/in/ricardo-numa-16ab581b/" target="#">
-                                <img src="img/linkedin.png" class="contact-image" /></a>
-                        </td>
-                        <td class="contact-td">
-                            <span class="contact-text">https://linkedin.com/in/ricardo-numa-16ab581b/</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="img/mail.png" class="contact-image" />
-                        </td>
-                        <td class="contact-td">
-                            <span class="contact-text">koki_numa@hotmail.com</span>
-                        </td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td>
+                        <a href="https://github.com/brrraulian" target="#">
+                            <img src="img/github.png" class="contact-image" /></a>
+                    </td>
+                    <td class="contact-td">
+                        <span class="contact-text">https://github.com/brrraulian</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://linkedin.com/in/ricardo-numa-16ab581b/" target="#">
+                            <img src="img/linkedin.png" class="contact-image" /></a>
+                    </td>
+                    <td class="contact-td">
+                        <span class="contact-text">https://linkedin.com/in/ricardo-numa-16ab581b/</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/mail.png" class="contact-image" />
+                    </td>
+                    <td class="contact-td">
+                        <span class="contact-text">koki_numa@hotmail.com</span>
+                    </td>
+                </tr>
             </table>
 
 

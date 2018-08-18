@@ -1,21 +1,25 @@
 ﻿.page {
-    padding-top: 70px;
-    margin: 0px;
+    padding-top: 40px;
+    margin: 0;
+}
+
+hr {
+    margin-bottom: 50px;
 }
 
 .bg-about {
     height: 90vh;
-    margin: 0px;
+    margin: 0;
 }
 
 .bg-projects {
-    height: 200vh;
-    margin: 0px;
+    height: 175vh;
+    margin: 0;
 }
 
 .bg-contact {
-    height: 77vh;
-    margin: 0px;
+    height: 78vh;
+    margin: 0;
 }
 
 .anchor {
@@ -43,7 +47,7 @@
     font-family: Arial;
     text-align: center;
     color: dimgray;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .margin-left-right {
@@ -59,7 +63,8 @@
 }
 
 .project-cell {
-    padding: 30px 30px 30px 30px;
+    padding: 0px 20px 0px 20px;
+    width: 33%;
 }
 
 .project-image {
@@ -80,16 +85,19 @@
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    width: 80%;
+    width: 70%;
     top: 50%;
     left: 40%;
-    transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .container:hover .project-image {
-    opacity: 0.2;
+    opacity: 0.05;
 }
 
 .container:hover .middle {
@@ -100,19 +108,22 @@
     width: 100%;
     color: black;
     font-size: 16px;
+    font-weight: bold;
     padding: 16px 32px;
 }
 
-.center {
-    margin: auto;
+.table-projects {
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
+    margin-top: -30px;
 }
 
 .contact-table {
     margin: auto;
     width: 60%;
-	padding-top: 10%;
-	padding-left: 15%;
+    padding-top: 10%;
+    padding-left: 15%;
 }
 
 .contact-image {

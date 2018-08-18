@@ -1,9 +1,4 @@
-﻿body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.bg-home {
+﻿.bg-home {
     background: url(/img/fundo.jpg);
     height: 100%;
     background-position: center;
@@ -11,28 +6,19 @@
     background-size: cover;
 }
 
-.center-div {
-    position: absolute;
-    margin: auto;
-    right: 0;
-    left: 0;
+.button-home {
+    text-decoration: none;
     color: #fff;
-    width: 800px;
-    height: 10px;
     font-family: 'Century Schoolbook';
     text-align: center;
 }
 
 .hello-world {
     font-size: 14pt;
-    bottom: 65%;
-    top: 0;
 }
 
 .name {
     font-size: 14pt;
-    bottom: 45%;
-    top: 0;
 }
 
 .feature {
@@ -43,6 +29,7 @@
 
 .home-text {
     font-size: 14pt;
-    bottom: 0;
-    top: 0;
+    font-family: 'Century Schoolbook';
+    margin-top: 0;
+    padding-top: 12%;
 }

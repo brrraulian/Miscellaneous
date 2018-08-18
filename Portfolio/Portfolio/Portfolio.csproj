@@ -98,7 +98,6 @@
     <Content Include="img\fundo.jpg" />
     <Content Include="img\github2.png" />
     <Content Include="img\googleplay.png" />
-    <Content Include="img\icms.ico" />
     <Content Include="img\icms.jpg" />
     <Content Include="Default.aspx" />
     <Content Include="img\projects\arks.png" />
@@ -108,6 +107,7 @@
     <Content Include="img\projects\ceb.png" />
     <Content Include="img\projects\condor2.png" />
     <Content Include="img\projects\ceb2.png" />
+    <Content Include="img\projects\icms.png" />
     <Content Include="img\projects\izio.png" />
     <Content Include="img\projects\pernambucanas.png" />
     <Content Include="img\projects\pernambucanas2.png" />

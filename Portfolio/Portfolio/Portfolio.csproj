@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\default.css" />
-    <Content Include="CSS\estilo.css" />
     <Content Include="CSS\master.css" />
     <Content Include="CSS\page.css" />
     <Content Include="Icms.aspx" />
+    <Content Include="img\about.jpg" />
     <Content Include="img\github.png" />
     <Content Include="img\linkedin.png" />
     <Content Include="img\mail.png" />
@@ -120,7 +120,6 @@
     <Content Include="img\projects\risque.png" />
     <Content Include="img\projects\petcare3.png" />
     <Content Include="img\projects\izio2.png" />
-    <Content Include="JavaScript\JavaScript.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

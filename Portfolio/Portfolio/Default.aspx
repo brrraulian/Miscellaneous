@@ -95,32 +95,70 @@
 
             <hr class="hr" />
 
-            <p class="about-text">Meu nome é Ricardo Numa, tenho 28 anos, sou formado em Administração de Empresas e depois de trabalhar alguns anos na área percebi que não era feliz fazendo aquilo.</p>
-            <p class="about-text">
-                Resolvi mudar de área e depois de pesquisar bastante, acabei me identificando com o mundo de TI, mais especificamente com a parte de desenvolvimento. 
-	Engraçado lembrar que quando adolecente, passava horas tentando deixar meu site gratuíto (usando praticamente HTML puro) mais legal para mostrar para meus amigos ou 
-	editava mapas de jogos para ficarem do jeito que eu gostaria que fossem.
-            </p>
-            <p class="about-text">
-                Em 2012 comecei a fazer um curso de Lógica de Programação e depois passei a estudar por conta própria através de tutoriais da internet, vídeos, artigos, apostilas e livros. 
-	Depois de vários meses de estudo, consegui uma oportunidade de trabalhar como programador freelancer numa empresa de TI. 
-	Como o foco dela era em infraestrutura e suporte, no começo só conseguia trabalhos pequenos. Mas com o passar do tempo, percebi como isso me ajudou a ganhar confiança e experiência, 
-	necessários para conseguir aumentar cada vez mais o nível de complexidade dos meus sistemas. 
-	Durante esse período, todas os sistemas que desenvolvi, tanto web quanto desktop, foram em .NET C#, MS SQL Server, MySQL, HTML, CSS e Javascript.
-            </p>
-            <p class="about-text">
-                Em 2013 juntei coragem o suficiente para começar minha segunda graduação, dessa vez em Ciência da Computação. Graças a experiência adquirida no trabalho, conseguia tirar 
-	de letra muitas das matérias da faculdade, enquanto que algumas eram totalmente novas para mim. Através dos trabalhos acadêmicos, pude desenvolver diversos sistemas em Java e 
-	em 2014 comecei a estudar Android. Em 2015 surgiu a oportunidade de desenvolver um aplicativo Android para a empresa em que trabalhava, e foi aí que surgiu o Arks Capture.
-            </p>
-            <p class="about-text">
-                Atualmente sou responsável pelos serviços relacionados com o sistema de recuperação de crédito de ICMS, no qual participei de todo desenvolvimento. Quando tenho um tempinho, 
-	procuro estudar para me especilizar em mobile e web.
-            </p>
-            <p class="about-text">
-                Espero me formar na faculdade no meio de 2017, para que assim possa dedicar mais tempo a minha família e também ao meu hobbie, 
-	que por coinscidência, também é o meu trabalho. ; )
-            </p>
+            <table>
+                <tr>
+                    <td class="about-td-image">
+                        <img class="about-image" src="img/about.jpg" />
+
+                        <p class="about-text about-image-text">
+                            Me and Melissa, my every moment partner!
+                        </p>
+
+                    </td>
+                    <td class="about-td-text">
+                        <p class="about-text">
+                            Hi, my name is Ricardo Numa, 30 years old and I work as a Software Developer. 
+                            Graduated in Business Administration, I started working in the administrative area and realized that I was't happy.
+
+                        </p>
+
+                        <p class="about-text">
+                            After a few years, I decided to change my vocation and after a lot of research, 
+                            I ended up identifying myself with the IT world, more specifically with programming. 
+                            It's funny to remember that when I was a teenager, 
+                            I spent many days trying to make my site cooler to show my friends (using HTML only) or 
+                            editing game maps to be exactly the way I wanted them to be, 
+                            but back then I never imagined working with something like that.
+                        </p>
+
+                        <p class="about-text">
+                            In 2012 I started to study on my own through internet tutorials, videos, articles, handouts, books and 
+                            took a Programming Logic course. After several months of study, 
+                            I got an opportunity to work as a freelance programmer in an IT company. 
+                            Because its focus was on infrastructure and support, at first I only got small jobs. But over time, 
+                            I realized how it has helped me gain the confidence and 
+                            experience necessary to be able to increase my systems complexity level more and more. 
+                            During this period, all the systems I developed, both web and desktop, 
+                            were in .NET C #, MS SQL Server, MySQL, HTML, CSS and Javascript.
+                        </p>
+
+                        <p class="about-text">
+                            In 2013, I got enough courage to start my second bachelor's degree, this time in Computer Science. 
+                            Thanks to my work experience, many of the college subjects were very easy, 
+                            while some were totally new and challenging to me. 
+                            Through the academic work, I was able to develop several systems in Java and in 2014 I started to study Android. 
+                            In 2015, the opportunity arose to develop an Android application for the company where it worked, 
+                            and that's where Arks Capture came about.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+
+                        <p class="about-text">
+                            I am currently responsible for the services related to the ICMS credit recovery system, 
+                            in which I participated in all development. 
+                            When I have a little time, I try to study to be specific in mobile and web.
+                        </p>
+
+                        <p class="about-text">
+                            I hope to graduate from college in the middle of 2017, 
+                            so that I can dedicate more time to my family and also to my hobbie, which, by ancestry, is also my job. ; )
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
 
         </div>
 
@@ -142,7 +180,7 @@
 
             <table class="table-projects">
                 <tr>
-                    <td class="project-cell"><a href="Arks.aspx" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/arks.png" alt="Arks Capture" />
                             <div class="middle">
@@ -154,8 +192,8 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
-                    <td class="project-cell"><a href="Icms.aspx" target="#">
+                    </td>
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/icms.png" alt="ICMS" />
                             <div class="middle">
@@ -167,8 +205,8 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
-                    <td class="project-cell"><a href="Ceb.aspx" target="#">
+                    </td>
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/ceb.png" alt="Cenoura & Bronze" />
                             <div class="middle">
@@ -180,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                 </tr>
                 <tr>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.izio.condor" target="#">
@@ -209,7 +247,7 @@
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell"><a href="Izio.aspx" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/pernambucanas.png" alt="Izio" />
                             <div class="middle">
@@ -221,10 +259,10 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="project-cell"><a href="Pernambucanas.aspx" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/pernambucanas2.png" alt="Auto Atendimento Pernambucanas" />
                             <div class="middle">
@@ -236,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.dahora.petcare" target="#">
                         <div class="container">
                             <img class="project-image" src="img/projects/petcare.png" alt="Bulário Pet Care" />
@@ -250,7 +288,7 @@
                             </div>
                         </div>
                     </a></td>
-                    <td class="project-cell"><a href="Risque.aspx" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/risque.png" alt="Risqué" />
                             <div class="middle">
@@ -262,7 +300,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                 </tr>
                 <tr>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.shyre" target="#">

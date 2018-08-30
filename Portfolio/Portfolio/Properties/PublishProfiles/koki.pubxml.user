@@ -16,7 +16,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/07/2018 23:29:27</publishTime>
     </File>
     <File Include="bin/Portfolio.dll">
-      <publishTime>08/17/2018 23:19:34</publishTime>
+      <publishTime>08/29/2018 23:23:23</publishTime>
     </File>
     <File Include="bin/Valemobi.dll">
       <publishTime>08/07/2018 23:16:43</publishTime>
@@ -31,13 +31,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2018 02:18:29</publishTime>
     </File>
     <File Include="CSS/page.css">
-      <publishTime>08/18/2018 02:18:23</publishTime>
+      <publishTime>08/29/2018 22:44:14</publishTime>
     </File>
     <File Include="CSS/StyleSheet.css">
       <publishTime>08/07/2018 23:38:12</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>08/18/2018 02:18:46</publishTime>
+      <publishTime>08/29/2018 23:21:31</publishTime>
     </File>
     <File Include="Demo.aspx">
       <publishTime>08/09/2018 00:36:42</publishTime>
@@ -50,6 +50,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Icms.aspx">
       <publishTime>08/12/2018 01:08:33</publishTime>
+    </File>
+    <File Include="img/about.jpg">
+      <publishTime>08/29/2018 21:46:13</publishTime>
     </File>
     <File Include="img/arks.png">
       <publishTime>08/09/2018 00:08:44</publishTime>

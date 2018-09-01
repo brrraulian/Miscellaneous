@@ -31,11 +31,4 @@ public class MainActivityTest {
 
         onView(withId(R.id.text)).check(matches(withText("Hello World!")));
     }
-
-    @Test
-    public void shouldHideAfterButtonClick() {
-        onView(ViewMatchers.withId(R.id.hide)).perform(click());
-
-        onView(ViewMatchers.withId(R.id.hide)).check(matches(not(isDisplayed())));
-    }
 }

@@ -28,6 +28,9 @@ android {
                 includeNoLocationClasses = true
             }
         }
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 

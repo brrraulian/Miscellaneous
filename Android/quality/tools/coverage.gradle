@@ -1,0 +1,78 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+}
+
+task disableAnimations() {
+    final adb = "$android.sdkDirectory.absolutePath${File.separatorChar}platform-tools${File.separatorChar}adb"
+
+    """$adb shell settings put global window_animation_scale 0.0 &&
+       $adb shell settings put global transition_animation_scale 0.0 &&
+       $adb shell settings put global animator_duration_scale 0.0 """.execute()
+}
+
+afterEvaluate { project ->
+    project.android.productFlavors.each { flavor ->
+        project.android.buildTypes.each { type ->
+            def flavorName = flavor.name.capitalize()
+            def buildTypeName = type.name.capitalize()
+
+            def testTaskName = "connected${flavorName}${buildTypeName}AndroidTest"
+            def testReportTaskName = "create${flavorName}${buildTypeName}CoverageReport"
+
+            if (tasks.findByName(testTaskName) != null) {
+                tasks[testTaskName].dependsOn('disableAnimations')
+            }
+
+            if(tasks.findByName(testReportTaskName) != null){
+                tasks[testReportTaskName].doLast {
+                    def reportFile = new File("$projects.project.buildDir.absolutePath" +
+                            "\\reports\\coverage\\$flavorName\\$buildTypeName\\index.html")
+                    println("\n\n\tCOVERAGE REPORT GENERATED: \n\t-> ${reportFile.toURI()}\n\n")
+                }
+            }
+        }
+    }
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['connectedItauDebugAndroidTest', 'createItauDebugCoverageReport']) {
+    reports {
+        xml.enabled = true
+        csv.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            '**/*_.*',
+            '**/*_$*.*',
+            '**/*_*'
+    ]
+
+    def debugTree = fileTree(dir: "$buildDir/intermediates/classes/itau/debug", excludes: fileFilter)
+    def mainSrc = [
+            "$projectDir/src/main/java",
+            "$projectDir/src/debug/java",
+            "$projectDir/src/itau/java",
+            "$projectDir/src/itauDebug/java",
+    ]
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = fileTree(dir: "$buildDir/outputs/code-coverage/connected/flavors/ITAU/",
+            include: "**.ec")
+
+    doLast {
+        println "Jacoco report has been generated to file://${reports.html.destination}/index.html"
+    }
+}

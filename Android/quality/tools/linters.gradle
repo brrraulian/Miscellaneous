@@ -1,0 +1,40 @@
+/* NÃO ALTERAR ESSE ARQUIVO
+ * Sempre verique se esse arquivo não está subindo junto dos seus commits. Alterações aqui não são permitidas!
+ */
+
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+checkstyle {
+    toolVersion = "7.8.2"
+}
+
+task checkstyle(type: Checkstyle) {
+    configFile file("${rootDir}${File.separatorChar}tools${File.separatorChar}linters${File.separatorChar}checkstyle.xml")
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+}
+
+task findbugs(type: FindBugs) {
+    // ignoreFailures = false faz com que exiba mensagem de erro ao finalizar a execução do FindBugs e quebrar o build
+    ignoreFailures = false
+    effort = "max"
+    reportLevel = "low"
+    classes = files("$project.buildDir${File.separatorChar}intermediates${File.separatorChar}classes")
+    includeFilter = file("$rootProject.rootDir${File.separatorChar}tools${File.separatorChar}linters${File.separatorChar}findbugs.xml")
+    excludeFilter = file("$rootProject.rootDir${File.separatorChar}tools${File.separatorChar}linters${File.separatorChar}findbugs-exclude.xml")
+
+    source = fileTree('src/main/java/')
+    classpath = files()
+    reports {
+        xml.enabled = false
+        xml.withMessages = true
+        html.enabled = true
+        xml.destination "$project.buildDir${File.separatorChar}reports${File.separatorChar}findbugs${File.separatorChar}findbugs.xml"
+        html.destination "$project.buildDir${File.separatorChar}reports${File.separatorChar}findbugs${File.separatorChar}findbugs.html"
+    }
+}
+check.dependsOn 'checkstyle', 'findbugs', 'lint'

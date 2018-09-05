@@ -1,0 +1,150 @@
+//
+// Script para agrupar dados de cobertura por feature
+//
+// Esse script lê o relatório do jacoco e agrupa os dados de cobertura de um pacote específico.
+// Conseguimos assim, ter um relatório de cobertura agrupado por feature.
+//
+
+// Configurações do script
+def featureDir = new File("app/src/main/java/br/com/itau/pf/feature")
+def featurePackage = "br.com.itau.pf.feature"
+def jacocoCsvFile = new File("$buildDir/reports/jacoco/jacocoTestReport/jacocoTestReport.csv")
+// Feature aninhadas, em alguns casos usamos features agrupadas em outros pacotes.
+// Para que o script entenda isso, é necessário colocar o nome da featrue aqui,
+// assim ele irá buscar os pacotes internos.
+def nestedFeatures = ["payment"]
+
+FileFilter dirFilter = { it.isDirectory() }
+def featureDirs = featureDir
+        .listFiles(dirFilter)
+        .collect { feature ->
+    if (nestedFeatures.contains(feature.name))
+        feature.listFiles(dirFilter).collect { "${featurePackage}.${feature.name}.${it.name}" }
+    else
+        Collections.singletonList("${featurePackage}.${feature.name}")
+}.flatten().sort()
+
+// Dados do arquivo CSV do jacoco
+class CoverageLine {
+    final String group
+    final String packageName
+    final String className
+    final Integer instruction_missed
+    final Integer instruction_covered
+    final Integer branch_missed
+    final Integer branch_covered
+    final Integer line_missed
+    final Integer line_covered
+    final Integer complexity_missed
+    final Integer complexity_covered
+    final Integer method_missed
+    final Integer method_covered
+
+    final Integer instructionTotal
+    final Double instructionCoverage
+    final String lastPackageName
+
+    CoverageLine(String group, String packageName, String className,
+                 Integer instruction_missed, Integer instruction_covered, Integer branch_missed,
+                 Integer branch_covered, Integer line_missed, Integer line_covered,
+                 Integer complexity_missed, Integer complexity_covered,
+                 Integer method_missed, Integer method_covered) {
+        this.group = group
+        this.packageName = packageName
+        this.className = className
+        this.instruction_missed = instruction_missed
+        this.instruction_covered = instruction_covered
+        this.branch_missed = branch_missed
+        this.branch_covered = branch_covered
+        this.line_missed = line_missed
+        this.line_covered = line_covered
+        this.complexity_missed = complexity_missed
+        this.complexity_covered = complexity_covered
+        this.method_missed = method_missed
+        this.method_covered = method_covered
+
+        // Aqui é onde fazemos o calculo da feature.
+        this.instructionTotal = instruction_missed + instruction_covered
+        this.instructionCoverage = instruction_covered * 100 / instructionTotal
+        this.lastPackageName = packageName.split("\\.").last()
+    }
+
+    CoverageLine plus(CoverageLine other) {
+        return new CoverageLine(
+                group, packageName, null,
+                instruction_missed + other.instruction_missed,
+                instruction_covered + other.instruction_covered,
+                branch_missed + other.branch_missed,
+                branch_covered + other.branch_covered,
+                line_missed + other.line_missed,
+                line_covered + other.line_covered,
+                complexity_missed + other.complexity_missed,
+                complexity_covered + other.complexity_covered,
+                method_missed + other.method_missed,
+                method_covered + other.method_covered
+        )
+    }
+}
+
+task listFeatures() {
+    group "Coverage"
+    description "List features that will be used in coverage by feature report"
+    doLast {
+        println "\nFeature count ${featureDirs.size()}"
+        for (dir in featureDirs) {
+            println " ${dir}"
+        }
+    }
+}
+
+@Nullable
+private static String findStartingWith(List<String> features, String packageName) {
+    for (s in features)
+        if (packageName.startsWith(s))
+            return s
+    return null
+}
+
+task coverageByFeature() {
+    group "Coverage"
+    description "Uses Jacoco csv report to group feature coverage info and prints it"
+    mustRunAfter 'jacocoTestReport'
+
+    doLast {
+
+        def coverageLines = new LinkedHashMap<String, CoverageLine>()
+        def coverageLinesOthers = new LinkedHashMap<String, CoverageLine>()
+        boolean first = true
+        jacocoCsvFile.splitEachLine(",") { fields ->
+            if (first) {
+                first = false
+                return
+            }
+            def coverage = new CoverageLine(
+                    fields[0], fields[1], fields[2], Integer.valueOf(fields[3]),
+                    Integer.valueOf(fields[4]), Integer.valueOf(fields[5]),
+                    Integer.valueOf(fields[6]), Integer.valueOf(fields[7]),
+                    Integer.valueOf(fields[8]), Integer.valueOf(fields[9]),
+                    Integer.valueOf(fields[10]), Integer.valueOf(fields[11]),
+                    Integer.valueOf(fields[12])
+            )
+
+            def packageName = findStartingWith(featureDirs.reverse(), coverage.packageName)
+            if (packageName != null) {
+                if (coverageLines.containsKey(packageName))
+                    coverage = coverageLines.get(packageName) + coverage
+                coverageLines.put(packageName, coverage)
+            } else {
+                if (coverageLinesOthers.containsKey(coverage.packageName))
+                    coverage = coverageLinesOthers.get(coverage.packageName) + coverage
+                coverageLinesOthers.put(coverage.packageName, coverage)
+            }
+        }
+        coverageLines += coverageLinesOthers
+        coverageLines.collect { k, c -> String.format("${k}, %05.2f", c.instructionCoverage) }
+                .sort()
+                .forEach { s ->
+            println s
+        }
+    }
+}

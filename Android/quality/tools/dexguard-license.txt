@@ -1,0 +1,10 @@
+# DexGuard license file
+licensee              = Itau unibanco
+contact               = Rainer Vilhermo Alves
+contactEmail          = daniel.scapin@itau-unibanco.com.br
+product               = DexGuard
+version               = 7.*,8.*
+package               = com.itau.aco,com.itau.applight,com.itau,com.itau.pers,com.tokpag,com.itaucard.activity,com.itau.empresas,com.credicard.app,com.hipercard.app,br.com.mobilerede,com.itau.tablet.varejo,com.itau.tablet.personnalite
+expiryDate            = 2018-08-24
+maintenanceExpiryDate = 2018-08-24
+key                   = 1f263cfa9c7f747cd80c9b3c35a7687d337c368f9067b4085fd640d3e51804f2d2ad436052fe0fee674243569c14ddced8ae21e0cc0b8947cfd7cc5331bc7a6c

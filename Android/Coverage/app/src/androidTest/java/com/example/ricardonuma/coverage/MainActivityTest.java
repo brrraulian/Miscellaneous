@@ -1,6 +1,5 @@
 package com.example.ricardonuma.coverage;
 
-import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -25,7 +24,7 @@ public class MainActivityTest {
 
     @Test
     public void shouldUpdateTextAfterButtonClick() {
-        onView(ViewMatchers.withId(R.id.button)).perform(click());
+        onView(withId(R.id.button)).perform(click());
 
         onView(withId(R.id.text)).check(matches(withText("Hello World!")));
     }

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Desafio Android</string>
+
+    <string name="title_wait">Aguarde&#8230;</string>
+
+    <!-- // MAIN -->
+    <string name="title_main">Github JavaPop</string>
+
+    <!-- EMPTY LAYOUT -->
+    <string name="empty_title_generic">Could not load items</string>
+    <string name="empty_subtitle_generic">Pull to load again</string>
+
+    <string name="empty_title_repository">Repositórios</string>
+    <string name="empty_subtitle_repository">Nenhum repositório encontrado</string>
+
+    <string name="empty_title_pull_request">Pull Request</string>
+    <string name="empty_subtitle_pull_request">Nenhum pull request encontrado</string>
+
+    <!-- // ERROR -->
+    <string name="message_no_connection">Sem conexão com a Internet</string>
+    <string name="message_error_load_repository">Falha ao carregar os repositórios</string>
+    <string name="message_error_load_pull_request">Falha ao carregar os pull requests</string>
+
+    <string name="error_message_timeout">java.net.SocketTimeoutException</string>
+    <string name="error_message_timeout2">onnect</string>
+    <string name="error_message_timeout3">timeout</string>
+    <string name="error_message_timeout4">host</string>
+    <string name="error_message_timeout5">handshake</string>
+    <string name="message_timeout">Sem conexão com a internet</string>
+
+    <string name="error_message_last_page">Não foi encontrado recomendação de produtos, para o cliente informado.</string>
+
+
+</resources>

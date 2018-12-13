@@ -1,0 +1,59 @@
+Ricardo,
+ 
+O gestor da vaga solicitou que os candidatos realizem um teste. Assim que estiver pronto, me envie para que eu agende a entrevista ok?
+ 
+Segue abaixo o teste:
+ 
+Teste Programador Mobile Wiinc.
+ 
+1-) Criar uma tela de login com os seguintes campos:
+•             Campos de Login e Senha
+•             Armazenar o Retorno (SharedPreferences, NSUserDefaults, etc…)
+ 
+2-) Criar uma tela para Listar Feeds com os seguintes campos :(Use sua criatividade, para exibir o feed com sua respectiva imagem)
+•             Listview (android) , TableView(iOS)
+ 
+ 
+ 
+Extra: utilizar bibliotecas (Volley,AFNetworking, JsonModel, ETC….)
+ 
+ 
+ 
+Requisições:
+ 
+Login(POST): http://52.67.76.161/bokaboka/v1/TesteWiinc/Login
+Requisição:(Dados para autenticação) 
+{
+"Login":"testewiinc@gmail.com",
+"Senha":"asd123"
+}
+Retorno JSON Sucesso
+{"IdUsuario": 6,"Token": "de2f0ab4-4a36-45c8-961d-7a4efda017cc","Success": true,"Message": null} Retorno JSON Erro
+{"Success": false,"Message": “Ocorreu um erro……"}
+ 
+ 
+ListarFeeds(GET): http://52.67.76.161/bokaboka/v1/TesteWiinc/Feeds
+Requisição: (Enviar via Header o parametro Authorization com o conteúdo do Token retornado no login)
+ 
+ 
+Retorno JSON Sucesso
+{
+  "Feeds": [
+    {
+      "Titulo": "Whiskeria ",
+      "Descricao": "Ganhe um dose",
+      "Data": "19/05/2016 14:55:28",
+      "Imagem": "http://52.67.76.161/bokaboka/v1/Imagens/579”
+    }]
+,"Success": true,
+"Message": null
+}
+Retorno JSON Erro
+{"Success": false,"Message": “Ocorreu um erro……”}
+ 
+ 
+Fico no aguardo do envio, assim em seguida já agendamos a entrevista para você saber detalhes técnicos sobre a vaga.
+ 
+Atenciosamente,
+ 
+Luciene Dias

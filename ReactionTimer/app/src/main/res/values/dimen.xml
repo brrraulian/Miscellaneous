@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_view_settings">18sp</dimen>
+    <dimen name="text_timer">70sp</dimen>
+    <dimen name="button_margin">24dp</dimen>
+    <dimen name="settings_text_view_margin_top_bottom">16dp</dimen>
+    <dimen name="settings_text_view_margin_start">28dp</dimen>
+    <dimen name="settings_edit_text_margin_top_bottom">4dp</dimen>
+    <dimen name="settings_edit_text_margin_end">28dp</dimen>
+    <dimen name="settings_view_margin_top_bottom">20dp</dimen>
+    <dimen name="settings_view_margin_start_end">24dp</dimen>
+</resources>

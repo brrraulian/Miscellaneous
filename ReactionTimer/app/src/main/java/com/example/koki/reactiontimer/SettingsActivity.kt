@@ -20,7 +20,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun loadEditText() {
-        edit_text_countdown.setText(PrefUtil.getSecondsCountdown(this).toString())
+        edit_text_countdown.setText(PrefUtil.getSecondsRemaining(this).toString())
         edit_text_random_min.setText(PrefUtil.getSecondsRandomMin(this).toString())
         edit_text_random_max.setText(PrefUtil.getSecondsRandomMax(this).toString())
     }
@@ -34,7 +34,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun setEditTextCountdownTextChanged() {
         edit_text_countdown.afterTextChanged {
             if (!edit_text_countdown.text.isEmpty() && edit_text_countdown.text.toString().toInt() > 0)
-                PrefUtil.setSecondsCountdown(it.toInt(), this)
+                PrefUtil.setSecondsRemaining(it.toLong(), this)
         }
     }
 

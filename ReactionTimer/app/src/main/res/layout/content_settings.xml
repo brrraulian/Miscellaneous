@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:id="@+id/layout_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/settings_text_view_margin_top_bottom"
+        app:layout_constraintEnd_toStartOf="@id/layout_minutes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/settings_text_view_margin_start_end"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hours"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/settings_text_view_margin_top_bottom"
+        android:textSize="@dimen/text_view_settings" />
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/wp_hours"
+        android:layout_width="@dimen/wp_width"
+        android:layout_height="wrap_content"
+        app:wheel_item_text_size="@dimen/wp_text_size"
+        app:wheel_visible_item_count="3"
+        app:wheel_selected_item_text_color="@color/black"
+        app:wheel_cyclic="true"
+        android:layout_gravity="center_horizontal"
+        app:wheel_data="@array/WheelArrayTime"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/settings_text_view_margin_top_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minutes"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/settings_text_view_margin_top_bottom"
+        android:textSize="@dimen/text_view_settings"/>
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/wp_minutes"
+        android:layout_width="@dimen/wp_width"
+        android:layout_height="wrap_content"
+        app:wheel_item_text_size="@dimen/wp_text_size"
+        app:wheel_visible_item_count="3"
+        app:wheel_selected_item_text_color="@color/black"
+        app:wheel_cyclic="true"
+        android:layout_gravity="center_horizontal"
+        app:wheel_data="@array/WheelArrayTime"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/settings_text_view_margin_top_bottom"
+        android:layout_marginStart="@dimen/settings_text_view_margin_start_end"
+        app:layout_constraintStart_toEndOf="@id/layout_minutes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seconds"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/settings_text_view_margin_top_bottom"
+        android:textSize="@dimen/text_view_settings" />
+
+    <com.aigestudio.wheelpicker.WheelPicker
+        android:id="@+id/wp_seconds"
+        android:layout_width="@dimen/wp_width"
+        android:layout_height="wrap_content"
+        app:wheel_item_text_size="@dimen/wp_text_size"
+        app:wheel_visible_item_count="3"
+        android:layout_gravity="center_horizontal"
+        app:wheel_selected_item_text_color="@color/black"
+        app:wheel_cyclic="true"
+        app:wheel_data="@array/WheelArrayTime"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

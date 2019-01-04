@@ -5,8 +5,13 @@ import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import com.example.koki.reactiontimer.Util.PrefUtil
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_timer.*
+import kotlinx.android.synthetic.main.content_settings.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,24 +33,43 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        text_view_countdown.text = PrefUtil.getSecondsCountdown(this).toString()
-        button_start.setOnClickListener { v ->
+        fab_start.setOnClickListener { v ->
+            getSettings()
+            updateContents()
             startTimer()
             timerState = TimerState.Running
             updateButtons()
         }
-        button_pause.setOnClickListener { v ->
+        fab_pause.setOnClickListener { v ->
             timer.cancel()
             timerState = TimerState.Paused
             updateButtons()
         }
-        button_stop.setOnClickListener { v ->
+        fab_stop.setOnClickListener { v ->
             timer.cancel()
             timerState = TimerState.Stopped
             onTimerFinished()
         }
-        button_settings.setOnClickListener { v ->
-            startActivity(Intent(this, SettingsActivity::class.java))
+    }
+
+    private fun getSettings() {
+        val hours = wp_hours.currentItemPosition
+        val minutes = wp_minutes.currentItemPosition
+        val seconds = wp_seconds.currentItemPosition
+
+        var totalSeconds = (((hours * 60) + minutes) * 60) + seconds
+
+        PrefUtil.setSecondsLength(totalSeconds, this)
+    }
+
+    private fun updateContents() {
+        text_view_countdown.text = "00:00:00"
+        if(content_settings.visibility == View.VISIBLE) {
+            content_settings.visibility = View.GONE
+            content_timer.visibility = View.VISIBLE
+        } else {
+            content_settings.visibility = View.VISIBLE
+            content_timer.visibility = View.GONE
         }
     }
 
@@ -54,6 +78,7 @@ class MainActivity : AppCompatActivity() {
 
         val randomMin = PrefUtil.getSecondsRandomMin(this)
         val randomMax = PrefUtil.getSecondsRandomMax(this)
+        secondsRemaining = PrefUtil.getSecondsLength(this).toLong()
 
         timer = object : CountDownTimer(secondsRemaining * 1000, 1000) {
             override fun onFinish() = onTimerFinished()
@@ -73,37 +98,43 @@ class MainActivity : AppCompatActivity() {
                 } else if (countToTrigger == randomMax) {
                     triggerRandomReaction()
                 }
-
-                text_view_random.text = countToTrigger.toString()
             }
         }.start()
     }
 
     private fun updateCountdownUI() {
-        val minutesUntilFinished = secondsRemaining / 60
-        val secondsInMinuteUntilFinished = secondsRemaining - minutesUntilFinished * 60
+        val hoursUntilFinished = secondsRemaining / 60 / 60
+        val minutesUntilFinished = (secondsRemaining / 60) - hoursUntilFinished * 60
+        val secondsInMinuteUntilFinished = ((secondsRemaining - minutesUntilFinished * 60) - hoursUntilFinished * 60 * 60)
+        val hoursStr = hoursUntilFinished.toString()
+        val minutesStr = minutesUntilFinished.toString()
         val secondsStr = secondsInMinuteUntilFinished.toString()
-        text_view_countdown.text = "$minutesUntilFinished:${
+        text_view_countdown.text = "${
+        if (hoursStr.length == 2) hoursStr
+        else "0" + hoursStr}:${
+        if (minutesStr.length == 2) minutesStr
+        else "0" + minutesStr}:${
         if (secondsStr.length == 2) secondsStr
         else "0" + secondsStr}"
+//        progress_countdown.progress = (timerLengthSeconds - secondsRemaining).toInt()
     }
 
     private fun updateButtons() {
         when (timerState) {
             TimerState.Running -> {
-                button_start.isEnabled = false
-                button_pause.isEnabled = true
-                button_stop.isEnabled = true
+                fab_start.isEnabled = false
+                fab_pause.isEnabled = true
+                fab_stop.isEnabled = true
             }
             TimerState.Paused -> {
-                button_start.isEnabled = true
-                button_pause.isEnabled = false
-                button_stop.isEnabled = true
+                fab_start.isEnabled = true
+                fab_pause.isEnabled = false
+                fab_stop.isEnabled = true
             }
             TimerState.Stopped -> {
-                button_start.isEnabled = true
-                button_pause.isEnabled = false
-                button_stop.isEnabled = false
+                fab_start.isEnabled = true
+                fab_pause.isEnabled = false
+                fab_stop.isEnabled = false
             }
         }
     }
@@ -113,11 +144,14 @@ class MainActivity : AppCompatActivity() {
 
         setNewTimerLength()
 
+//        progress_countdown.progress = 0
+
         PrefUtil.setSecondsRemaining(timerLengthSeconds, this)
         secondsRemaining = timerLengthSeconds
 
         updateButtons()
         updateCountdownUI()
+        updateContents()
     }
 
     override fun onResume() {
@@ -162,11 +196,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setPreviousTimerLength() {
         timerLengthSeconds = PrefUtil.getPreviousTimerLengthSeconds(this)
+//        progress_countdown.max = timerLengthSeconds.toInt()
     }
 
     private fun setNewTimerLength() {
         val lengthInMinutes = PrefUtil.getTimerLegth(this)
         timerLengthSeconds = (lengthInMinutes * 60L)
+//        progress_countdown.max = timerLengthSeconds.toInt()
     }
 
     private fun triggerRandomReaction() {
@@ -182,4 +218,24 @@ class MainActivity : AppCompatActivity() {
 
     fun IntRange.random() =
             Random().nextInt((endInclusive + 1) - start) + start
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_timer, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

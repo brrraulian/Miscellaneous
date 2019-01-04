@@ -7,7 +7,7 @@ import com.example.koki.reactiontimer.MainActivity
 class PrefUtil {
     companion object {
         fun getTimerLegth(context: Context): Int {
-            return 1
+            return getSecondsLength(context)
         }
 
         private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.example.koki.reactiontimer.previous_timer_length"
@@ -52,16 +52,16 @@ class PrefUtil {
         }
 
 
-        private const val SECONDS_COUNTDOWN_ID = "com.example.koki.reactiontimer.seconds_countdown"
+        private const val SECONDS_LENGTH_ID = "com.example.koki.reactiontimer.seconds_length"
 
-        fun getSecondsCountdown(context: Context): Int {
+        fun getSecondsLength(context: Context): Int {
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-            return preferences.getInt(SECONDS_COUNTDOWN_ID, 60)
+            return preferences.getInt(SECONDS_LENGTH_ID, 60)
         }
 
-        fun setSecondsCountdown(seconds: Int, context: Context) {
+        fun setSecondsLength(seconds: Int, context: Context) {
             val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-            editor.putInt(SECONDS_COUNTDOWN_ID, seconds)
+            editor.putInt(SECONDS_LENGTH_ID, seconds)
             editor.apply()
         }
 

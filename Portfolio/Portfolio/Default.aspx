@@ -385,7 +385,7 @@
 
     <div class="footer">
         Made with
-        <img src="" />
+        <img src="img/heart.png" width="20px" margin-bottom="-20px" />
         in São Paulo-BR
             <br />
         <br />

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android-Cadastro.iml" filepath="$PROJECT_DIR$/.idea/modules/Android-Cadastro.iml" group="Cadastro" />
       <module fileurl="file://$PROJECT_DIR$/Cadastro.iml" filepath="$PROJECT_DIR$/Cadastro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Cadastro-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Cadastro-app.iml" group="Cadastro/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

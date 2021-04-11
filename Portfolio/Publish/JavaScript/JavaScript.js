@@ -96,3 +96,34 @@ function Validate() {
 
     return true;
 }
+
+function loadFunctions() {
+    getCurrentAge();
+    getSoftwareDeveloperYears();
+    getAndroidDeveloperYears();
+    getCurrentYear();
+}
+
+function getCurrentAge() {
+	if(new Date().getMonth() < 12) {	
+		document.getElementById('age').innerHTML = new Date().getFullYear() - 1988;
+	} else {	
+		if(new Date().getDate() < 17) {
+			document.getElementById('age').innerHTML = new Date().getFullYear() - 1988;
+		} else {	
+			document.getElementById('age').innerHTML = new Date().getFullYear() - 1987;
+        }
+	}
+}
+
+function getSoftwareDeveloperYears() {
+    document.getElementById('software').innerHTML = new Date().getFullYear() - 2013;
+}
+
+function getAndroidDeveloperYears() {
+    document.getElementById('android').innerHTML = new Date().getFullYear() - 2016;
+}
+
+function getCurrentYear() {
+    document.getElementById('year').innerHTML = new Date().getFullYear();
+}

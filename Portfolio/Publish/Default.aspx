@@ -13,9 +13,10 @@
 
 	<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
+    <script src="JavaScript/JavaScript.js"></script>
 </head>
-<body>
+<body onload="loadFunctions()">
 
 
     <a href="#about" class="button-home">
@@ -115,7 +116,7 @@
                     </td>
                     <td class="about-td-text">
                         <p class="about-text">
-                            Hi, my name is Ricardo Numa, 31 years old. I have been working as Software Developer for 6 years, 3 of them as Android Developer. I graduated in Business Administration and started working in the administrative area, but I realized that I wasn't happy.
+                            Hi, my name is Ricardo Numa, <span id="age">31</span> years old. I have been working as Software Developer for <span id="software">6</span> years, <span id="android">3</span> of them as Android Developer. I graduated in Business Administration and started working in the administrative area, but I realized that I wasn't happy.
                         </p>
 
                         <p class="about-text">
@@ -225,7 +226,7 @@
                 <tr>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.izio.condor" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/condor.png" alt="Clube Condor" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/dUNoGd0caRSTLu6aqBlWXc5pOA1wynHAqOpFNbDNnanID_ZIAngvzfxyeqzgWdpfGg=s360-rw" alt="Clube Condor" />
                             <div class="middle">
                                 <div class="text">
                                     Clube Condor
@@ -238,7 +239,7 @@
                     </a></td>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.stoneridge.eld" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/eld.png" alt="Stoneridge EZ-ELD" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/KJnQPHG96boZkUaUaTuJKZCmaNKc1MB1IOs0PB1ntZ7fDSgSBpRFg7sCYDGcpbCHrfE=s360-rw" alt="Stoneridge EZ-ELD" />
                             <div class="middle">
                                 <div class="text">
                                     EZ-ELD Driver App
@@ -277,7 +278,7 @@
                             </div>
                         </div>
                     </td>
-                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.dahora.petcare" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/petcare.png" alt="Bulário Pet Care" />
                             <div class="middle">
@@ -289,7 +290,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                     <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/risque.png" alt="Risqué" />
@@ -305,7 +306,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.shyre" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/shyre.png" alt="Shyre" />
                             <div class="middle">
@@ -317,16 +318,57 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.trrsecuritas.segurados" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/trr.png" alt="TRR" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/Hef1mpnnP726gI8JFzLxMLnopnjpWIQ2uY0Dn26nxvbxYr9ft5sb8qrDmQO0jkqHD_A=s360-rw" alt="TRR" />
                             <div class="middle">
                                 <div class="text">
                                     TRR
                                     <br />
                                     <br />
                                     Android app for health plan management, feeds, request and refunds follow-up, accredited network consultation and concierge.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.itau" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/CyP_f9VxfdTyixcWO_-2IW5cJ1M8adkqRrY9Wo_CkH0Ixj12qdg1SJHpuye-9n_YYqM=s360-rw" alt="Banco Itaú" />
+                            <div class="middle">
+                                <div class="text">
+                                    Banco Itaú
+                                    <br />
+                                    <br />
+                                    Bank account management Android app.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
+                </tr>
+                <tr>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=nz.co.southerncross.MySouthernCross" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/yju3DgyspU-scAGOOfTTV8gk8q6b1jRNtjJXE5v4u-7MG0Wjr4N56s4WvWYedMwdTsU=s360-rw" alt="My Southern Cross" />
+                            <div class="middle">
+                                <div class="text">
+                                    My Southern Cross
+                                    <br />
+                                    <br />
+                                    Health Insurance management Android app.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.silverfernfarms.calf.booking" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/pmVwc7njNcZEjquCHYel-dVKPQIbCWucRogA2LW_5REJKzAyLIdchTIN49WAcn27Qs4=s360-rw" alt="Silver Fern Farms Calf Booking" />
+                            <div class="middle">
+                                <div class="text">
+                                    Silver Fern Farms Calf Booking
+                                    <br />
+                                    <br />
+                                    Calf pickup booking Android app.
                                 </div>
                             </div>
                         </div>
@@ -394,42 +436,6 @@
                         <span class="skills-text">Git:</span>
                     </td>
                     <td class="skills-td">
-                        <span class="skills-text">Accessibility:</span>
-                    </td>
-                    <td class="skills-td">
-                        <span class="skills-text">Architecture:</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="fa-star-size skills-td">
-                        <span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
-                    </td>
-                    <td class="fa-star-size skills-td">
-                        <span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
-                    </td>
-                    <td class="fa-star-size skills-td">
-                        <span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
-			<span class="fa fa-star"></span>
-                    </td>
-                </tr>
-		<tr height="40px">
-		</tr>
-                <tr>
-                    <td class="skills-td">
-                        <span class="skills-text">Test Automation:</span>
-                    </td>
-                    <td class="skills-td">
                         <span class="skills-text">RESTful:</span>
                     </td>
                     <td class="skills-td">
@@ -441,6 +447,42 @@
                         <span class="fa fa-star checked"></span>
 			<span class="fa fa-star checked"></span>
 			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                </tr>
+		<tr height="40px">
+		</tr>
+                <tr>
+                    <td class="skills-td">
+                        <span class="skills-text">Kotlin:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Architecture:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Test Automation:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
 			<span class="fa fa-star"></span>
 			<span class="fa fa-star"></span>
                     </td>
@@ -463,14 +505,14 @@
 		</tr>
                 <tr>
                     <td class="skills-td">
-                        <span class="skills-text">Kotlin:</span>
+                        <span class="skills-text">Accessibility:</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="fa-star-size skills-td">
                         <span class="fa fa-star checked"></span>
 			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span>
 			<span class="fa fa-star"></span>
 			<span class="fa fa-star"></span>
                     </td>
@@ -527,12 +569,10 @@
     </div>
 
     <div class="footer">
-        Made with
-        <img src="img/heart.png" width="20px" margin-bottom="-20px" />
-        in São Paulo-BR
+        Made with <img src="img/heart.png" width="25px" style="margin-bottom:-7px" /> in Vancouver-CAN
             <br />
         <br />
-        © 2018 Ricardo Numa
+         &copy; <span id="year">2018</span> by Ricardo Numa
     </div>
 
 

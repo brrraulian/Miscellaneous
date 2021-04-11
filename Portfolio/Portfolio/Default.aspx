@@ -6,13 +6,17 @@
 <head runat="server">
     <title>Ricardo Numa</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/master.css" />
     <link rel="stylesheet" href="css/page.css" />
 
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="JavaScript/JavaScript.js"></script>
 </head>
-<body>
+<body onload="loadFunctions()">
 
 
     <a href="#about" class="button-home">
@@ -65,6 +69,11 @@
                             </td>
                             <td>
                                 <div class="master-button">
+                                    <a class="button" href="#skills">SKILLS</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="master-button">
                                     <a class="button" href="#contact">CONTACT</a>
                                 </div>
                             </td>
@@ -107,38 +116,35 @@
                     </td>
                     <td class="about-td-text">
                         <p class="about-text">
-                            Hi, my name is Ricardo Numa, 30 years old and I work as a Software Developer. 
-                            Graduated in Business Administration, I started working in the administrative area and realized that I was't happy.
-
+                            Hi, my name is Ricardo Numa, <span id="age">31</span> years old. I have been working as Software Developer for <span id="software">6</span> years, <span id="android">3</span> of them as Android Developer. I graduated in Business Administration and started working in the administrative area, but I realized that I wasn't happy.
                         </p>
 
                         <p class="about-text">
-                            After a few years, I decided to change my vocation and after a lot of research, 
+                            After a few years, I decided to change my vocation and after a lot of search, 
                             I ended up identifying myself with the IT world, more specifically with programming. 
-                            It's funny to remember that when I was a teenager, 
-                            I spent many days trying to make my site cooler to show my friends (using HTML only) or 
-                            editing game maps to be exactly the way I wanted them to be, 
-                            but back then I never imagined working with something like that.
+                            It's funny to remember when I was a teenager, 
+                            I spent many days trying to make my website cooler to show my friends (using HTML only) or 
+                            editing game maps to be exactly the way I wanted them to be. 
+                            Back then I never imagined working with something like that.
                         </p>
 
                         <p class="about-text">
-                            In 2012 I started to study on my own through internet tutorials, videos, articles, handouts, books and 
+                            In 2012 I started to study on my own through internet tutorials, videos, articles, books and 
                             took a Programming Logic course. After several months of study, 
-                            I got an opportunity to work as a freelance programmer in an IT company. 
+                            I got an opportunity to work as a freelance programmer at an IT company. 
                             Because its focus was on infrastructure and support, at first I only got small jobs. But over time, 
                             I realized how it has helped me gain the confidence and 
                             experience necessary to be able to increase my systems complexity level more and more. 
                             During this period, all the systems I developed, both web and desktop, 
-                            were in .NET C #, MS SQL Server, MySQL, HTML, CSS and Javascript.
+                            were in ASP.NET C #, MS SQL Server, MySQL, HTML, CSS and Javascript.
                         </p>
 
                         <p class="about-text">
-                            In 2013, I got enough courage to start my second bachelor's degree, this time in Computer Science. 
+                            In 2013, I gathered enough courage to start another bachelor degree, this time in Computer Science. 
                             Thanks to my work experience, many of the college subjects were very easy, 
                             while some were totally new and challenging to me. 
                             Through the academic work, I was able to develop several systems in Java and in 2014 I started to study Android. 
-                            In 2015, the opportunity arose to develop an Android application for the company where it worked, 
-                            and that's where Arks Capture came about.
+                            In 2015, the opportunity arose to develop an Android application for the company where I worked.
                         </p>
                     </td>
                 </tr>
@@ -146,14 +152,11 @@
                     <td colspan="2">
 
                         <p class="about-text">
-                            I am currently responsible for the services related to the ICMS credit recovery system, 
-                            in which I participated in all development. 
-                            When I have a little time, I try to study to be specific in mobile and web.
+                             I started working exclusively with Android development in 2016 and in 2017 I graduated on my second bachelor degree. Since then I have been working only with Android development until now.
                         </p>
 
                         <p class="about-text">
-                            I hope to graduate from college in the middle of 2017, 
-                            so that I can dedicate more time to my family and also to my hobbie, which, by ancestry, is also my job. ; )
+                             I love to code, learn something new, play baseball, watch series and movies and be with my family, friends and my girlfriend. Sometimes on my free time I like to study to develop myself as a software developer, because I believe we always have room to improve. For me, life is too short to be wasted doing something without your heart in it. That's why I'm thankfull and happy to have the opportunity to work with something I really enjoy. ; )
                         </p>
                     </td>
                 </tr>
@@ -223,7 +226,7 @@
                 <tr>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.izio.condor" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/condor.png" alt="Clube Condor" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/dUNoGd0caRSTLu6aqBlWXc5pOA1wynHAqOpFNbDNnanID_ZIAngvzfxyeqzgWdpfGg=s360-rw" alt="Clube Condor" />
                             <div class="middle">
                                 <div class="text">
                                     Clube Condor
@@ -236,7 +239,7 @@
                     </a></td>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.stoneridge.eld" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/eld.png" alt="Stoneridge EZ-ELD" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/KJnQPHG96boZkUaUaTuJKZCmaNKc1MB1IOs0PB1ntZ7fDSgSBpRFg7sCYDGcpbCHrfE=s360-rw" alt="Stoneridge EZ-ELD" />
                             <div class="middle">
                                 <div class="text">
                                     EZ-ELD Driver App
@@ -275,7 +278,7 @@
                             </div>
                         </div>
                     </td>
-                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.dahora.petcare" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/petcare.png" alt="Bulário Pet Care" />
                             <div class="middle">
@@ -287,7 +290,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                     <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/risque.png" alt="Risqué" />
@@ -303,7 +306,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=br.com.shyre" target="#">
+                    <td class="project-cell">
                         <div class="container">
                             <img class="project-image" src="img/projects/shyre.png" alt="Shyre" />
                             <div class="middle">
@@ -315,10 +318,10 @@
                                 </div>
                             </div>
                         </div>
-                    </a></td>
+                    </td>
                     <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.trrsecuritas.segurados" target="#">
                         <div class="container">
-                            <img class="project-image" src="img/projects/trr.png" alt="TRR" />
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/Hef1mpnnP726gI8JFzLxMLnopnjpWIQ2uY0Dn26nxvbxYr9ft5sb8qrDmQO0jkqHD_A=s360-rw" alt="TRR" />
                             <div class="middle">
                                 <div class="text">
                                     TRR
@@ -329,15 +332,197 @@
                             </div>
                         </div>
                     </a></td>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.itau" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/CyP_f9VxfdTyixcWO_-2IW5cJ1M8adkqRrY9Wo_CkH0Ixj12qdg1SJHpuye-9n_YYqM=s360-rw" alt="Banco Itaú" />
+                            <div class="middle">
+                                <div class="text">
+                                    Banco Itaú
+                                    <br />
+                                    <br />
+                                    Bank account management Android app.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
+                </tr>
+                <tr>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=nz.co.southerncross.MySouthernCross" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/yju3DgyspU-scAGOOfTTV8gk8q6b1jRNtjJXE5v4u-7MG0Wjr4N56s4WvWYedMwdTsU=s360-rw" alt="My Southern Cross" />
+                            <div class="middle">
+                                <div class="text">
+                                    My Southern Cross
+                                    <br />
+                                    <br />
+                                    Health Insurance management Android app.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
+                    <td class="project-cell"><a href="https://play.google.com/store/apps/details?id=com.silverfernfarms.calf.booking" target="#">
+                        <div class="container">
+                            <img class="project-image" src="https://play-lh.googleusercontent.com/pmVwc7njNcZEjquCHYel-dVKPQIbCWucRogA2LW_5REJKzAyLIdchTIN49WAcn27Qs4=s360-rw" alt="Silver Fern Farms Calf Booking" />
+                            <div class="middle">
+                                <div class="text">
+                                    Silver Fern Farms Calf Booking
+                                    <br />
+                                    <br />
+                                    Calf pickup booking Android app.
+                                </div>
+                            </div>
+                        </div>
+                    </a></td>
                 </tr>
             </table>
 
         </div>
 
+        <div id="skills"></div>
 
         <hr />
 
 
+
+
+
+
+        <div class="bg-skills">
+
+
+            <h2 class="title">SKILLS</h2>
+
+            <hr />
+
+            <table class="skills-table">
+                <tr>
+                    <td class="skills-td">
+                        <span class="skills-text">Android:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Java:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Agile:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                </tr>
+		<tr height="40px">
+		</tr>
+                <tr>
+                    <td class="skills-td">
+                        <span class="skills-text">Git:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">RESTful:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Analytics:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                </tr>
+		<tr height="40px">
+		</tr>
+                <tr>
+                    <td class="skills-td">
+                        <span class="skills-text">Kotlin:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Architecture:</span>
+                    </td>
+                    <td class="skills-td">
+                        <span class="skills-text">Test Automation:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                </tr>
+		<tr height="40px">
+		</tr>
+                <tr>
+                    <td class="skills-td">
+                        <span class="skills-text">Accessibility:</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fa-star-size skills-td">
+                        <span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
 
 
 
@@ -384,12 +569,10 @@
     </div>
 
     <div class="footer">
-        Made with
-        <img src="img/heart.png" width="20px" margin-bottom="-20px" />
-        in São Paulo-BR
+        Made with <img src="img/heart.png" width="25px" style="margin-bottom:-7px" /> in Vancouver-CAN
             <br />
         <br />
-        © 2018 Ricardo Numa
+         &copy; <span id="year">2018</span> by Ricardo Numa
     </div>
 
 
